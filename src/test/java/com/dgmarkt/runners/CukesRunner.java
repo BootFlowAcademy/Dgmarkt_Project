@@ -13,8 +13,8 @@ import org.junit.runner.RunWith;
         },
         features = "src/test/resources/features",
         glue = "com/dgmarkt/step_definitions",
-        dryRun = false,
-        tags = ""
+        dryRun = true,
+        tags = "@BFB1DGMAUT-9_2"
 )
 public class CukesRunner {
 }
