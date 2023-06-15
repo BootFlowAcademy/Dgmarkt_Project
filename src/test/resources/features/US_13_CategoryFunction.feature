@@ -1,3 +1,4 @@
+@BFB1DGMAUT-13
 Feature: Category Functionality
 
   Background: The user is on home page
@@ -8,11 +9,10 @@ Feature: Category Functionality
     And The user enters account credentials "AsimK@bootflow.com" and "1234" and clicks login
     Then Verify that the user is on home page
 
-  @BFB1DGMAUT-13
   Scenario: The user select Sub-Category tabs under the Category Module
     When The user hovers the cursor over the category tab
     Then Verify that the sees  Sub-Category tabs under the Category Module
 
-  Scenario: The user click the Category Module
+  Scenario: The user goes to Category Module
     Given The user click the Category
     Then Verify that the user is on Category Module
