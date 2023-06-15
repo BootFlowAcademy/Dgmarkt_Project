@@ -12,3 +12,5 @@ Feature: Cart Icon Function
   Scenario: The user should be able to see added product list by click car icon
     When The user clicks cart icon button
     Then Verify that added product list is displayed
+
+  Scenario: The user should be able to go to Cart page
