@@ -1,4 +1,4 @@
-@wip
+@BFB1DGMAUT-6
 Feature: Login Functionality
 
   Background: The user logs in for login panel
