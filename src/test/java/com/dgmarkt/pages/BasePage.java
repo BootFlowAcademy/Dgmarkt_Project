@@ -28,4 +28,6 @@ public abstract class BasePage {
 
     @FindBy(xpath = "(//div[@class='mega-menu-container sub-menu-container left '])[1]")
     public WebElement categorySubMenu_DropDown;
+    @FindBy(id = "wishlist-total")
+    public WebElement wishlist_Btn;
 }
