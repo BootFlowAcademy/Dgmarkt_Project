@@ -21,5 +21,18 @@ Feature: Change Password Test - The user can change the password
     Given The user enters valid credentials with different datas
     Then Verify that password change could not confirm.
 
+  @BFB1DGMAUT-9_3
+  Scenario Outline: The user should not change the password with invalid credentials which is between 1-3 characters.
+    When The user enters "<password>" and "<passwordConfirm>" credentials
+    Then Verify that warning message is displayed
+    Examples:
+      | password | passwordConfirm |
+      | Q        | Q               |
+      | 1$       | 1$              |
+      | a4(      | a4(             |
+
+
+
+
 
 
