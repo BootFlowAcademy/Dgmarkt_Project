@@ -1,5 +1,6 @@
 package com.dgmarkt.step_definitions;
 
+import com.dgmarkt.pages.BasePage;
 import com.dgmarkt.pages.CartPage;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
