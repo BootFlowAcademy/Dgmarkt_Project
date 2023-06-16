@@ -1,7 +1,9 @@
 package com.dgmarkt.pages;
 
+import com.dgmarkt.utilities.BrowserUtils;
 import com.dgmarkt.utilities.ConfigurationReader;
 import com.dgmarkt.utilities.Driver;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -34,5 +36,10 @@ public abstract class BasePage {
     public WebElement logout_btn;
     @FindBy (xpath = "//a[text()='My Account'][1]")
     public WebElement myAccountShow_btn;
+
+    public void goToSubCategoryByName_mtd(String subCategoryName){
+        WebElement subCategory = Driver.get().findElement(By.xpath("//a[text()='"+subCategoryName+"']/../.."));
+        BrowserUtils.hoverAndClick(category_btn,subCategory);
+    }
 
 }
