@@ -32,4 +32,7 @@ public abstract class BasePage {
     public WebElement wishlist_Btn;
     @FindBy(xpath = "//a[@id='pt-logout-link']/..")
     public WebElement logout_btn;
+    @FindBy (xpath = "//a[text()='My Account'][1]")
+    public WebElement myAccountShow_btn;
+
 }
