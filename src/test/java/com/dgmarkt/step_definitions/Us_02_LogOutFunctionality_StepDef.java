@@ -6,7 +6,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 
-public class Us_2_LogOutFunctionality_StepDef {
+public class Us_02_LogOutFunctionality_StepDef {
     HomePage homePage = new HomePage();
 
     @When("The user clicks to My Account button")
