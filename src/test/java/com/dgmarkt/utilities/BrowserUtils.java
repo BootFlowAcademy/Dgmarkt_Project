@@ -61,7 +61,14 @@ public class BrowserUtils {
         Actions actions = new Actions(Driver.get());
         actions.moveToElement(element).perform();
     }
-
+    /**
+     * Can be used to click on menus that opens with hovering
+     */
+    public static void hoverAndClick(WebElement menu,WebElement subMenu) {
+        Actions actions = new Actions(Driver.get());
+        actions.moveToElement(menu).perform();
+        actions.click(subMenu).perform();
+    }
     /**
      * return a list of string from a list of elements
      *

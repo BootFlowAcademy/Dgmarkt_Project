@@ -22,4 +22,17 @@ public abstract class BasePage {
 
     @FindBy(xpath = "//ul[@class='dropdown-menu pull-right']")
     public WebElement cartProduct_list;
+
+    @FindBy(xpath = "(//li[@class='li-top-item left '])[1]")
+    public WebElement category_btn;
+
+    @FindBy(xpath = "(//div[@class='mega-menu-container sub-menu-container left '])[1]")
+    public WebElement categorySubMenu_DropDown;
+    @FindBy(id = "wishlist-total")
+    public WebElement wishlist_Btn;
+    @FindBy(xpath = "//a[@id='pt-logout-link']/..")
+    public WebElement logout_btn;
+    @FindBy (xpath = "//a[text()='My Account'][1]")
+    public WebElement myAccountShow_btn;
+
 }
