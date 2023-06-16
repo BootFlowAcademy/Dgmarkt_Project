@@ -14,3 +14,4 @@ Feature: Cart Icon Function
     Then Verify that added product list is displayed
 
   Scenario: The user should be able to see product in cart list if add any product by click cart icon
+    When
