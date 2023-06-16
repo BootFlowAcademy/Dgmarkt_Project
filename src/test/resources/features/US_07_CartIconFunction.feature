@@ -9,8 +9,8 @@ Feature: Cart Icon Function
     Then Verify that the user is on home page
 
   @BFB1DGMAUT-7
-  Scenario: The user should be able to see added product list by click car icon
+  Scenario: The user should be able to see added product list by click cart icon
     When The user clicks cart icon button
     Then Verify that added product list is displayed
 
-  Scenario: The user should be able to go to Cart page
+  Scenario: The user should be able to see product in cart list if add any product by click cart icon
