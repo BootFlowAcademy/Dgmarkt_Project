@@ -30,4 +30,6 @@ public abstract class BasePage {
     public WebElement categorySubMenu_DropDown;
     @FindBy(id = "wishlist-total")
     public WebElement wishlist_Btn;
+    @FindBy(xpath = "//a[@id='pt-logout-link']/..")
+    public WebElement logout_btn;
 }
