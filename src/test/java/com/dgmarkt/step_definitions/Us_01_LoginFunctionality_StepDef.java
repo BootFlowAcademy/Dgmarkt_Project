@@ -5,7 +5,6 @@ import com.dgmarkt.pages.LoginPage;
 import com.dgmarkt.pages.LoginPanel;
 import com.dgmarkt.utilities.ConfigurationReader;
 import com.dgmarkt.utilities.Driver;
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;

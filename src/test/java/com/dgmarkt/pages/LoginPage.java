@@ -12,10 +12,8 @@ public class LoginPage extends BasePage{
     public WebElement loginPagePassword_text;
     @FindBy(xpath = "(//button[@class='button btn'])[1]")
     public WebElement loginPageLogin_btn;
-
     @FindBy (xpath = "//div[@class='alert alert-danger']")
     public WebElement loginPageWarning_msg;
-
     public void loginPage_mtd(String email,String password){
         loginPageEmail_text.sendKeys(email);
         loginPagePassword_text.sendKeys(password);
