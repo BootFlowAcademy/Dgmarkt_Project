@@ -31,6 +31,17 @@ Feature: Change Password Test - The user can change the password
       | 1$       | 1$              |
       | a4(      | a4(             |
 
+  @BFB1DGMAUT-9_4
+  Scenario Outline: The user should not change the password with invalid credentials which is more than 40 characters.
+    When The user enters more than 40 characters. <password> and <passwordConfirm> credentials
+    Then Verify that warning message is displayed
+    Examples:
+      | password                                           | passwordConfirm                                    |
+      | "\"(İzmir9Eylül1922)\"&\"(Samsun19Mayıs1919)\""    | "\"(İzmir9Eylül1922)\"&\"(Samsun19Mayıs1919)\""    |
+      | "\"(İzmir9Eylül1922)\"&\"(Samsun19Mayıs1919)\"?"   | "\"(İzmir9Eylül1922)\"&\"(Samsun19Mayıs1919)\"?"   |
+      | "\"(İzmir9Eylül1922)\"&\"(Samsun19Mayıs1919)\"-?=" | "\"(İzmir9Eylül1922)\"&\"(Samsun19Mayıs1919)\"-?=" |
+
+
 
 
 
