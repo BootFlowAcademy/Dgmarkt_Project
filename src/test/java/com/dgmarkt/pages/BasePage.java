@@ -18,8 +18,6 @@ public abstract class BasePage {
     public WebElement accountLogin_btn;
     @FindBy(xpath = "//div[@id='logo']")
     public WebElement homeLogo_icon;
-    @FindBy(xpath = "(//a[text()='My Account'])[1]")
-    public WebElement myAccountGo_btn;
     @FindBy(xpath = "//button[@class='btn btn-inverse btn-block btn-lg dropdown-toggle']")
     public WebElement cartIcon_btn;
     @FindBy(xpath = "//ul[@class='dropdown-menu pull-right']")
