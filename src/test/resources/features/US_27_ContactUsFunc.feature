@@ -1,3 +1,4 @@
+@BFB1DGMAUT-27
 Feature: Contact us Function
 
   Background: The user is on home page
@@ -8,7 +9,6 @@ Feature: Contact us Function
     And The user enters account credentials "y.berk@outlook.com" and "123xxx45" and clicks login
     Then Verify that the user is on home page
 
-  @BFB1DGMAUT-27
   Scenario: The user should be contuct the team correctly
     When The user click the contuct us button
     Then The user should be see their name and email
