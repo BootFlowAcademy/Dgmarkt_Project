@@ -1,3 +1,4 @@
+@BFB1DGMAUT-8
 Feature: Edit Information Function
 
   Background: The user is on home page
@@ -10,9 +11,6 @@ Feature: Edit Information Function
     And The user clicks on the my account button under the my account tab
     Then The user should be click on the edit my account tab on the page that opens
 
-
-  @BFB1DGMAUT-8
   Scenario: The user should be able to update their user information under the edit my account tab.
-    Given The user should click on edit my account tab
-    When The user should be able to make various changes on the page that opens
-    Then Verify that you can click the continue button
+    Given The user should be able to make various changes on the page that opens
+    When Verify that you can click the continue button
