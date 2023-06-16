@@ -43,4 +43,9 @@ public class Us_01_LoginFunctionality_StepDef {
     public void verify_that_the_user_is_on_home_page() {
         Assert.assertTrue(homePage.loginSuccessfully_msg.isDisplayed());
     }
+    @Then("Verify that the error message is displayed")
+    public void verify_that_the_error_message_is_displayed() {
+        String actualWarningMessage=loginPage.loginPageWarning_msg.getText();
+        Assert.assertTrue(actualWarningMessage.contains("Warning: "));
+    }
 }
