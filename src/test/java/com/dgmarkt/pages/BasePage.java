@@ -39,4 +39,16 @@ public abstract class BasePage {
         WebElement subCategory = Driver.get().findElement(xpath("//a[text()='"+subCategoryName+"']/../.."));
         BrowserUtils.hoverAndClick(category_btn,subCategory);
     }
+    @FindBy(xpath = "//div[2]/div/ul/li[4]")
+    public WebElement contactUs_btn;
+    @FindBy(xpath = "//*[text()='Currency']/..")
+    public WebElement currency_btn;
+    @FindBy(xpath = "//*[contains(text(),' Euro')]/..")
+    public WebElement currencySubMenuEuro_btn;
+    @FindBy(xpath = "//*[contains(text(),' US Dollar')]/..")
+    public WebElement currencySubMenuDollar_btn;
+    @FindBy(xpath = "//*[text()='Currency']/../span[1]")
+    public WebElement currentCurrency_text;
+
+
 }
