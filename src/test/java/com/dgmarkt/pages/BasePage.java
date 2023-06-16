@@ -1,16 +1,17 @@
 package com.dgmarkt.pages;
 
-import com.dgmarkt.utilities.ConfigurationReader;
 import com.dgmarkt.utilities.Driver;
+import com.dgmarkt.utilities.BrowserUtils;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import static org.openqa.selenium.By.xpath;
+
 public abstract class BasePage {
     public BasePage() {
-        PageFactory.initElements(Driver.get(), this);
+        PageFactory.initElements(Driver.get(),this);
     }
-
     @FindBy(xpath = "//a[@title='My Account']/..")
     public WebElement myAccount_btn;
     @FindBy(xpath = "//a[@id='pt-login-link']/..")
@@ -27,6 +28,19 @@ public abstract class BasePage {
     public WebElement categorySubMenu_DropDown;
     @FindBy(id = "wishlist-total")
     public WebElement wishlist_Btn;
+    @FindBy(xpath = "//a[@id='pt-logout-link']/..")
+    public WebElement logout_btn;
+    @FindBy (xpath = "//a[text()='My Account'][1]")
+    public WebElement myAccountShow_btn;
+    @FindBy(xpath = "//a[@href='https://dgmarkt.com/index.php?route=checkout/cart']")
+    public WebElement viewCart_btn;
+
+    public void goToSubCategoryByName_mtd(String subCategoryName){
+        WebElement subCategory = Driver.get().findElement(xpath("//a[text()='"+subCategoryName+"']/../.."));
+        BrowserUtils.hoverAndClick(category_btn,subCategory);
+    }
+    @FindBy(xpath = "//div[2]/div/ul/li[4]")
+    public WebElement contactUs_btn;
     @FindBy(xpath = "//*[text()='Currency']/..")
     public WebElement currency_btn;
     @FindBy(xpath = "//*[contains(text(),' Euro')]/..")
