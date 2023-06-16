@@ -11,6 +11,8 @@ public class HomePage extends BasePage{
     public WebElement category_Btn;
     @FindBy(xpath = "(//h4//a[text()='Health & Beauty'])[1]")
     public WebElement healthCat_Btn;
+    @FindBy(xpath = "//div[@class='logout-success']")
+    public WebElement accountLogout_box;
     public void goToCategory_mtd(){
         hoverAndClick(category_Btn,healthCat_Btn);
     }
