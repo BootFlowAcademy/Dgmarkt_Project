@@ -12,8 +12,7 @@ public class US_06_WishlistFunction_StepDefs {
     HealthBeautyPage healthBeautyPage = new HealthBeautyPage();
     WishListPage wishListPage = new WishListPage();
     @When("The user navigates to Health & Beauty category")
-    public void theUserNavigatesToHealthBeautyCategory() {
-        homePage.goToCategory_mtd();
+    public void theUserNavigatesToHealthBeautyCategory() {homePage.goToCategory_mtd();
     }
     @And("The user adds products to the wish list")
     public void theUserAddsProductsToTheWishList() {
