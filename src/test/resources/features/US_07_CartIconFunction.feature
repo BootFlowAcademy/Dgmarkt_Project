@@ -1,3 +1,4 @@
+@BFB1DGMAUT-7
 Feature: Cart Icon Function
 
   Background: The user is on home page
@@ -12,7 +13,6 @@ Feature: Cart Icon Function
     When The user clicks cart icon button
     Then Verify that added product list is displayed
 
-  @BFB1DGMAUT-7
   Scenario: The user should be able to see product in cart list if add any product by click cart icon
     Given The user navigates to sub-category "Networking"
     And The user adds two products to the cart list names "ASUS ROG STRIX GS-AX3000" and "Belkin Secure Flip KVM Switch"
