@@ -1,4 +1,11 @@
 package com.dgmarkt.pages;
 
-public class OrderHistoryPage {
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+
+public class OrderHistoryPage extends BasePage{
+
+@FindBy (xpath = "//td[text()='#314']")
+    public WebElement orderId_txt;
+
 }

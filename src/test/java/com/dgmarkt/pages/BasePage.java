@@ -34,6 +34,8 @@ public abstract class BasePage {
     public WebElement myAccountShow_btn;
     @FindBy(xpath = "//a[@href='https://dgmarkt.com/index.php?route=checkout/cart']")
     public WebElement viewCart_btn;
+    @FindBy(xpath = "(//a[text()='Order History'])[1]")
+    public WebElement orderHistory_btn;
 
     public void goToSubCategoryByName_mtd(String subCategoryName){
         WebElement subCategory = Driver.get().findElement(xpath("//a[text()='"+subCategoryName+"']/../.."));
