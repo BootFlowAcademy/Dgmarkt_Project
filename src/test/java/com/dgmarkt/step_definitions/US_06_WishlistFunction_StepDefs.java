@@ -3,6 +3,7 @@ package com.dgmarkt.step_definitions;
 import com.dgmarkt.pages.HealthBeautyPage;
 import com.dgmarkt.pages.HomePage;
 import com.dgmarkt.pages.WishListPage;
+import com.dgmarkt.utilities.BrowserUtils;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -25,5 +26,26 @@ public class US_06_WishlistFunction_StepDefs {
     @Then("Verify that the user can see {string} and {string} on the wish list")
     public void verifyThatTheUserCanSeeAndOnTheWishList(String item1, String item2) {
         wishListPage.verifyProductsVisible_mtd(item1,item2);
+    }
+
+    @When("The user adds first item to cart using Add to Cart button")
+    public void theUserAddsFirstItemToCartUsingAddToCartButton() {
+        wishListPage.item1_addToCartBtn.click();
+    }
+
+    @Then("Verify that the user gets {string} pop up")
+    public void verifyThatTheUserGetsPopUp(String expectedMsg) {
+        wishListPage.verifyPopUp_mtd(expectedMsg);
+    }
+
+    @When("The user adds second item to cart using Add to cart Button")
+    public void theUserAddsSecondItemToCartUsingAddToCartButton() {
+        BrowserUtils.scrollToElement(wishListPage.item2_addToCartBtn);
+        wishListPage.item2_addToCartBtn.click();
+    }
+
+    @Then("Verify that the user sees the products in the Cart")
+    public void verifyThatTheUserSeesTheProductsInTheCart() {
+        wishListPage.verifyCart_mtd();
     }
 }

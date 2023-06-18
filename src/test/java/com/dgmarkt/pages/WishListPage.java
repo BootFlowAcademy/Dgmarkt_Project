@@ -20,6 +20,20 @@ public class WishListPage extends BasePage{
     public WebElement item2_removeBtn;
     @FindBy(xpath = "//a[contains(@href,'remove=7064674')]")
     public WebElement item1_removeBtn;
+    @FindBy(css = "#cart")
+    public WebElement cart_btn;
+    @FindBy(className = "alert alert-success alert-dismissible")
+    public WebElement modifiedAlert_msg;
+    @FindBy(xpath = "//div[@class='alert alert-fix alert-success alert-dismissible']")
+    public WebElement alert_popUp;
+    @FindBy(xpath = "//button[@data-dismiss=\"alert\"]")
+    public WebElement popUp_closeBtn;
+    @FindBy(xpath = "//*[.='Your wish list is empty.']")
+    public WebElement wishEmpty_text;
+    @FindBy(xpath = "//*[@id=\"cart\"]//a[text()='Capsule Plate 6pcs']")
+    public WebElement item1_dropCartName;
+    @FindBy(xpath = "//*[@id=\"cart\"]//a[text()='BaByliss 3663U - Hair rollers']")
+    public WebElement item2_dropCartName;
     public void goToWishPage_mtd(){
         BrowserUtils.scrollToElement(wishlist_Btn);
         BrowserUtils.waitForClickablility(wishlist_Btn,3).click();
@@ -29,5 +43,16 @@ public class WishListPage extends BasePage{
         Assert.assertTrue(item2_productName.isDisplayed());
         Assert.assertEquals(item1_productName.getText(),item1);
         Assert.assertEquals(item2_productName.getText(),item2);
+    }
+    public void verifyPopUp_mtd(String expectedMsg){
+        System.out.println("alert_popUp.getText() = " + alert_popUp.getText());
+        Assert.assertTrue(alert_popUp.getText().contains(expectedMsg));
+        popUp_closeBtn.click();
+    }
+    public void verifyCart_mtd(){
+        BrowserUtils.scrollToElement(cart_btn);
+        cart_btn.click();
+        Assert.assertTrue(item1_dropCartName.isDisplayed());
+        Assert.assertTrue(item2_dropCartName.isDisplayed());
     }
 }
