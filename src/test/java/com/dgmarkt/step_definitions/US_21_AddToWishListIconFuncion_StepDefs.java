@@ -21,11 +21,11 @@ public class US_21_AddToWishListIconFuncion_StepDefs {
                 WebElement wishproductToClick = Driver.get().findElement(By.xpath("(//button[@title='Add to Wish List'])[" + j + "]"));
                 BrowserUtils.waitFor(2);
                 BrowserUtils.hoverAndClick(producthover,wishproductToClick);
-                wishproductToClick.click();
-              //  BrowserUtils.waitFor(2);
-              //  WebElement wishbuttonmsgclose = Driver.get().findElement(By.cssSelector("class=\"close\""));
-               // BrowserUtils.waitFor(2);
-             //   wishbuttonmsgclose.click();
+               // wishproductToClick.click();
+               // BrowserUtils.waitFor(1);
+                WebElement wishbuttonmsgclose = Driver.get().findElement(By.xpath("//button[@data-dismiss='alert']"));
+                BrowserUtils.waitFor(2);
+                wishbuttonmsgclose.click();
 
             }
         }
