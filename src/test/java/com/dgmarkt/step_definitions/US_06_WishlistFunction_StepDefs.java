@@ -47,5 +47,26 @@ public class US_06_WishlistFunction_StepDefs {
     @Then("Verify that the user sees the products in the Cart")
     public void verifyThatTheUserSeesTheProductsInTheCart() {
         wishListPage.verifyCart_mtd();
+        wishListPage.emptyCart_mtd();
+    }
+
+    @When("The user removes the first item using Remove button")
+    public void theUserRemovesTheFirstItemUsingRemoveButton() {
+        wishListPage.item1_removeBtn.click();
+    }
+
+    @Then("Verify the user sees {string} alert")
+    public void verifyTheUserSeesAlert(String expectedText) {
+        wishListPage.verifyModified_mtd(expectedText);
+    }
+
+    @When("The user removes the second item using Remove button")
+    public void theUserRemovesTheSecondItemUsingRemoveButton() {
+        wishListPage.item2_removeBtn.click();
+    }
+
+    @Then("Verify the wish list is empty and the user sees {string} text")
+    public void verifyTheWishListIsEmptyAndTheUserSeesText(String expectedText) {
+        wishListPage.verifyEmptyText_mtd(expectedText);
     }
 }
