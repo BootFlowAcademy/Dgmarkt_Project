@@ -10,43 +10,44 @@ Feature: Add or Modify Address
     And The user clicks on the my account button under the my account tab
     Then The user should be click on the address book tab on the page that opens
 
-  @BFB1DGMAUT-10
-
-  Scenario Outline: The user should be able to add new adress
+  @BFB1DGMAUT-10_1
+  Scenario Outline: The user should be able to add new adress with valid credentials
     When The user clicks on new address button
     And The user clicks on "<FirstName>" box, "<LastName>" box,  "<Address1>" box,"<City>" box and "<PostCode>" box
+    And The user select "<Country>" and "<RegionState>"
     Then The user click Continue button
-    Then Verify that the user see "<TextMessage>"
+    Then Verify that the user see verify message
 
     Examples:
-      | FirstName | LastName | Address1 | City | PostCode | TextMessage                            |
+      | FirstName            | LastName             | Address1                | City                 | PostCode | Country | RegionState |
+      | Fred                 | Stone                | Mountain View Sunnyvale | San Jose             | 94043    | 223     | 3624        |
+      | 1                    | 1                    | 111                     | 11                   | 11       | 215     | 3353        |
+      | aaaa                 | aaaa                 | aaaa                    | aaaa                 | aaaa     | 81      | 1259        |
+      | abcDEF///1234567@@@, | abcDEF///1234567@@@, | abcDEF///1234567@@@,    | abcDEF///1234567@@@, | abc1234, | 6       | 131         |
 
-      |           |          |          |      |          | First Name must be between 1 and 32 characters! |
-     # | Fred                                | Stone                               | Mountain View Sunnyvale             | San Jose                            | 94043       | Your address has been successfully added        |
+  @BFB1DGMAUT-10_2
+  Scenario Outline: The user should be able to add new adress with invalid credentials and no data
+    When The user clicks on new address button
+    And The user clicks on "<FirstName>" box, "<LastName>" box,  "<Address1>" box,"<City>" box and "<PostCode>" box
+    And The user select "<Country>" and "<RegionState>"
+    Then The user click Continue button
+    Then Verify that the user see danger text
 
+    Examples:
+      | FirstName                           | LastName                            | Address1                                                                                                       | City                                                                                                           | PostCode      | Country | RegionState |
+      |                                     |                                     |                                                                                                                |                                                                                                                |               |         |             |
+      | 1                                   |                                     | 12                                                                                                             | 1                                                                                                              | 1             |         |             |
+      | abcDEFghjk//--\1234567890@@@==***…, | abcDEFghjk//--\1234567890@@@==***…, | abcDEFghjk//--\1234567890@@@==***…,+++12345qwrpmabcDEFghjk//--\1234567890@@@==***…,+++12345qwrpmabcDEFghjk//-- | abcDEFghjk//--\1234567890@@@==***…,+++12345qwrpmabcDEFghjk//--\1234567890@@@==***…,+++12345qwrpmabcDEFghjk//-- | abc12345//+++ |         |             |
 
-    #  |                                     |                                     |                                     |                                     |             | Your address has been successfully added        |
-    #   |                                     | Stone                               | Mountain View Sunnyvale             | San Jose                            | 94043       | First Name must be between 1 and 32 characters! |
-    #  | 1                                   | Stone                               | Mountain View Sunnyvale             | San Jose                            | 94043       | Your address has been successfully added        |
-    #   | aaa                                 | Stone                               | Mountain View Sunnyvale             | San Jose                            | 94043       | Your address has been successfully added        |
-       #  | abcDEFghjk//--\1234567890@@@==***…, | Stone                               | Mountain View Sunnyvale             | San Jose                            | 94043       | First Name must be between 1 and 32 characters! |
+  @BFB1DGMAUT-10_3
+  Scenario Outline: The user should be able to update adress with valid credentials
+    When The user clicks edit button
+    And The user clears "<FirstName>" box, "<LastName>" box,  "<Address1>" box,"<City>" box and "<PostCode>" box for update
+    And The user clicks on "<FirstName>" box, "<LastName>" box,  "<Address1>" box,"<City>" box and "<PostCode>" box
+    And The user select "<Country>" and "<RegionState>"
+    Then The user click Continue button
+    Then Verify that the user see update verify message
 
-   #    | Fred                                |                                     | Mountain View Sunnyvale             | San Jose                            | 94043       | Last Name must be between 1 and 32 characters!  |
-    #   | Fred                                | 1                                   | Mountain View Sunnyvale             | San Jose                            | 94043       | Address must be between 3 and 128 characters!   |
-   #    | Fred                                | aaa                                 | Mountain View Sunnyvale             | San Jose                            | 94043       | City must be between 2 and 128 characters!      |
-    #   | Fred                                | abcDEFghjk//--\1234567890@@@==***…, | Mountain View Sunnyvale             | San Jose                            | 94043       | Postcode must be between 2 and 10 characters!   |
-
-   #    | Fred                                | Stone                               |                                     | San Jose                            | 94043       | Last Name must be between 1 and 32 characters!  |
-  #     | Fred                                | Stone                               | 1                                   | San Jose                            | 94043       | Address must be between 3 and 128 characters!   |
-   #    | Fred                                | Stone                               | aaa                                 | San Jose                            | 94043       | City must be between 2 and 128 characters!      |
-   #    | Fred                                | Stone                               | abcDEFghjk//--\1234567890@@@==***…, | San Jose                            | 94043       | Postcode must be between 2 and 10 characters!   |
-
-    #   | Fred                                | Stone                               | Mountain View Sunnyvale             |                                     | 94043       | Last Name must be between 1 and 32 characters!  |
-   #    | Fred                                | Stone                               | Mountain View Sunnyvale             | 1                                   | 94043       | Address must be between 3 and 128 characters!   |
-   #    | Fred                                | Stone                               | Mountain View Sunnyvale             | aaa                                 | 94043       | City must be between 2 and 128 characters!      |
-     #  | Fred                                | Stone                               | Mountain View Sunnyvale             | abcDEFghjk//--\1234567890@@@==***…, | 94043       | Postcode must be between 2 and 10 characters!   |
-
-     # | Fred                                | Stone                               | Mountain View Sunnyvale             | San Jose                            |             | Your address has been successfully added        |
-      #| Fred                                | Stone                               | Mountain View Sunnyvale             | San Jose                            | 1           | Your address has been successfully added        |
-     # | Fred                                | Stone                               | Mountain View Sunnyvale             | San Jose                            | aaa         | Your address has been successfully added        |
-    #  | Fred                                | Stone                               | Mountain View Sunnyvale             | San Jose                            | abcde12345, | Your address has been successfully added        |
+    Examples:
+      | FirstName | LastName | Address1         | City     | PostCode | Country | RegionState |
+      | John      | Mountain | New Stone Street | Sao Alto | 32300    | 215     | 3353        |

@@ -22,18 +22,42 @@ public class US_10_AddOrModifyAddressFunction_StepDef {
 
     @And("The user clicks on {string} box, {string} box,  {string} box,{string} box and {string} box")
     public void theUserClicksOnBoxBoxBoxBoxAndBox(String FirstName, String LastName, String Address1, String City, String PostCode) {
-       addressBookPage.theUserAddressClicks(FirstName,LastName,Address1,City,PostCode);
+       addressBookPage.theUserAddressClicks_mtd(FirstName,LastName,Address1,City,PostCode);
     }
-
     @Then("The user click Continue button")
     public void theUserClickContinueButton() {
-        addressBookPage.Continue_btn.click();
+        addressBookPage.continue_btn.click();
     }
 
-    @Then("Verify that the user see {string}")
-    public void verifyThatTheUserSee(String TextMessage) {
-        String categoryText = Driver.get().findElement(By.cssSelector("[class=\"text-danger\"]")).getText();
-        assertEquals(TextMessage, categoryText);
+    @Then("Verify that the user see verify message")
+    public void verifyThatTheUserSeeVerifyMessage() {
+       assertTrue(addressBookPage.verifyNewAddressAdd_text.isDisplayed());
 
+       // String categoryText = Driver.get().findElement(By.cssSelector("[class=\"text-danger\"]")).getText();
+        //assertEquals(TextMessage, categoryText);
     }
+    @And("The user select {string} and {string}")
+    public void theUserSelectAnd(String Country, String RegionState) {
+        addressBookPage.theUserSelectCountryRegion_mtd(Country,RegionState);
+    }
+    @Then("Verify that the user see danger text")
+    public void verifyThatTheUserSeeDangerText() {
+        assertTrue(addressBookPage.verifyDangerText_text.isDisplayed());
+    }
+
+    @When("The user clicks edit button")
+    public void theUserClicksEditButton() {
+        addressBookPage.editButton_btn.click();
+    }
+    @And("The user clears {string} box, {string} box,  {string} box,{string} box and {string} box for update")
+    public void theUserClearsBoxBoxBoxBoxAndBoxForUpdate(String FirstName, String LastName, String Address1, String City, String PostCode) {
+    addressBookPage.theUserAddressClear_mtd(FirstName,LastName,Address1,City,PostCode);
+    }
+    @Then("Verify that the user see update verify message")
+    public void verifyThatTheUserSeeUpdateVerifyMessage() {
+        assertTrue(addressBookPage.verifyEditAddressUpdated_text.isDisplayed());
+    }
+
+
+
 }
