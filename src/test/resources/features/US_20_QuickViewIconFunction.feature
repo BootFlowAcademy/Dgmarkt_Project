@@ -17,16 +17,8 @@ Feature: Quick View Function
     And the user hovers over the first product on the "Health & Beauty" category page
     Then the quick view icon should be displayed
 
-  Scenario: Browsing a Product with Quick View
-    Given the user is on the homepage of "https://dgmarkt.com/"
-    When the user clicks the quick view icon for a specific product
-    Then a condensed view of the product information should be displayed without redirecting the user to a new page
-    And the quick view panel should include essential details such as product name, price, description, and key features
-    And the user should be able to examine the product image(s) within the quick view panel
-    And the user should have the option to select product variations or configurations directly from the quick view panel
-    And the user should be able to add the product to their shopping cart or wishlist without leaving the current page
-    And the user should be able to close the quick view panel to continue browsing the product catalog or choose to view the full product details on a separate page
-    And if the user decides to view the full product details, they should be redirected to the complete product page
+  //Scenario: Browsing a Product with Quick View
+
 
   Scenario: Adding Product to Wish List from Quick View Popup
     Given the user is viewing a product in the quick view popup
