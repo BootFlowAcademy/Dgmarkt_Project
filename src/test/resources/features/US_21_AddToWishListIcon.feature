@@ -1,4 +1,4 @@
-
+@BFB1DGMAUT-21
 Feature: Login Functionality
 
   Background: The user logs in for login panel
@@ -9,7 +9,7 @@ Feature: Login Functionality
     And The user enters account credentials "bootdev@bootflow.academy" and "12341234" and clicks login
     Then Verify that the user is on home page
 
-  @BFB1DGMAUT-21
+
   Scenario Outline:  The user should be able to see products in the Wish List
     Then The user hovers the cursor over the category tab
     When The user clicks on "<CategoryName>", Verify that the user sees "<CategoryNameText>" and scrolls down
