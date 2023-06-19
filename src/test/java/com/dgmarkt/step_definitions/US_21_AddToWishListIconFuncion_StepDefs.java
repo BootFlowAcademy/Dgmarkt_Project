@@ -11,10 +11,7 @@ import org.openqa.selenium.WebElement;
 import static org.junit.Assert.*;
 
 public class US_21_AddToWishListIconFuncion_StepDefs {
-
-    String[] CategoryName = {"Health & Beauty", "Televisions", "TV Accessories", "Networking"};
-
-    public void addProductToWishList_mtd() {
+      public void addProductToWishList_mtd() {
             for (int j = 1; j < 7; j++) {
                 WebElement producthover = Driver.get().findElement(By.xpath("(//button[@title='Add to Wish List'])["+j+"]/../../.."));
                 BrowserUtils.waitFor(2);
@@ -26,13 +23,10 @@ public class US_21_AddToWishListIconFuncion_StepDefs {
                 WebElement wishbuttonmsgclose = Driver.get().findElement(By.xpath("//button[@data-dismiss='alert']"));
                 BrowserUtils.waitFor(2);
                 wishbuttonmsgclose.click();
-
             }
         }
-
-
-    @When("The user clicks on {string} and Verify that the user sees {string} and scrolls down")
-    public void the_user_clicks_on_and_verify_that_the_user_sees_and_scrolls_down(String CategoryName, String CategoryNameText) {
+    @When("The user clicks on {string}, Verify that the user sees {string} and scrolls down")
+    public void the_user_clicks_on_verify_that_the_user_sees_and_scrolls_down(String CategoryName, String CategoryNameText) {
 
           Driver.get().findElement(By.xpath("(//a[text()='" + CategoryName + "'])[1]")).click();
           String categoryText = Driver.get().findElement(By.xpath("(//*[text()='" + CategoryNameText + "'])[4]")).getText();

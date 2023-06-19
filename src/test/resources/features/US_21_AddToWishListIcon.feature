@@ -12,9 +12,8 @@ Feature: Login Functionality
   @BFB1DGMAUT-21
   Scenario Outline:  The user should be able to see products in the Wish List
     Then The user hovers the cursor over the category tab
-    When The user clicks on "<CategoryName>" and Verify that the user sees "<CategoryNameText>" and scrolls down
+    When The user clicks on "<CategoryName>", Verify that the user sees "<CategoryNameText>" and scrolls down
     Then The user adds six products every category to the wish list
-
     Examples:
       | CategoryName    | CategoryNameText |
       | Health & Beauty | Health & Beauty  |
