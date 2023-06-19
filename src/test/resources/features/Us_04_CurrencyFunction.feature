@@ -15,3 +15,13 @@ Feature: Currency Functionality
     And The user closes cookies pop up
     Then verify that The user sees euro icon
 
+  Scenario Outline: The user logs in for my account login with valid credential
+    Given The user clicks currency button
+    Then The user click the "<currencyName>" Button
+    And The user closes cookies pop up
+    Then verify that The user sees select currency icon
+    Examples:
+      | currencyName   |
+      | Euro           |
+      | Pound Sterling |
+      | US Dollar      |
