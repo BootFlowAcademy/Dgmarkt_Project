@@ -47,4 +47,6 @@ public abstract class BasePage {
         WebElement subCategory = Driver.get().findElement(xpath("//a[text()='"+subCategoryName+"']/../.."));
         BrowserUtils.hoverAndClick(category_btn,subCategory);
     }
+    @FindBy(xpath = "(//li[@class='li-top-item left '])[2]")
+    public WebElement category2_btn;
 }
