@@ -41,6 +41,8 @@ public abstract class BasePage {
     public WebElement currencySubMenuEuro_btn;
     @FindBy(xpath = "//*[text()='Currency']/../span[1]")
     public WebElement currentCurrency_text;
+    @FindBy(xpath = "//div[@class='breadcrumbs']//h1")
+    public WebElement pageName_text;//Bulunulan sayfanın sayfa ismini locate eder
     public void goToSubCategoryByName_mtd(String subCategoryName){
         WebElement subCategory = Driver.get().findElement(xpath("//a[text()='"+subCategoryName+"']/../.."));
         BrowserUtils.hoverAndClick(category_btn,subCategory);
