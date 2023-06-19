@@ -10,17 +10,15 @@ Feature: Quick View Function
     And The user enters account credentials "soyeroli@yahoo.com" and "Kayserili1" and clicks login
     Then Verify that the user is on home page
   @wip
-  Scenario: Displaying Quick View Icon on Hover
+  Scenario: The user hovers over the product, they can see the quick View Icon.
     When The user hovers the cursor over the category tab
-    Then Verify that the sees  Sub-Category tabs under the Category Module
-    When The user clicks <subcategory> button
+    And verify that the sees  Sub-Category tabs under the Category Module
+    And The user clicks <subcategory> button
     Then Verify that the user is on "<Sub-CategoryPage>"
-    When The user hovers the cursor over the category tab
-    And The user clicks the "Health & Beauty" button
-    And The user hovers over the first product on the "Health & Beauty" category page
+    And The user hovers over the first product on the "Health & Beauty" product
     Then The quick view icon should be displayed
 
-  //Scenario: Browsing a Product with Quick View
+  Scenario: The user can browse the product when the user clicks the quick view Icon
     Given The user hovers the cursor over the category tab
     Then Verify that the sees Sub-Category tabs under the Category Module
     When The user clicks <HEALTH & BEAUTY> button
