@@ -10,34 +10,47 @@ Feature: Quick View Function
     And The user enters account credentials "soyeroli@yahoo.com" and "Kayserili1" and clicks login
     Then Verify that the user is on home page
   @wip
-  Scenario: The user hovers over the product, they can see the quick view icon.
-    When The user hovers the cursor over the category tab
-    And The user clicks Health & Beauty button
-    And  The user hovers over the first product on Health & Beauty page category
-    Then Verify that Quick view icon can display
+  Scenario: Displaying Quick View Icon on Hover
+    Given the user is on the website's homepage
+    When the user hovers the cursor over the category tab
+    And the user clicks the "Health & Beauty" button
+    And the user hovers over the first product on the "Health & Beauty" category page
+    Then the quick view icon should be displayed
 
-  Scenario: The user can browse the product when the user clicks the quick view icon
+  Scenario: Browsing a Product with Quick View
+    Given the user is on the homepage of "https://dgmarkt.com/"
+    When the user clicks the quick view icon for a specific product
+    Then a condensed view of the product information should be displayed without redirecting the user to a new page
+    And the quick view panel should include essential details such as product name, price, description, and key features
+    And the user should be able to examine the product image(s) within the quick view panel
+    And the user should have the option to select product variations or configurations directly from the quick view panel
+    And the user should be able to add the product to their shopping cart or wishlist without leaving the current page
+    And the user should be able to close the quick view panel to continue browsing the product catalog or choose to view the full product details on a separate page
+    And if the user decides to view the full product details, they should be redirected to the complete product page
+
+  Scenario: Adding Product to Wish List from Quick View Popup
+    Given the user is viewing a product in the quick view popup
+    When the user clicks the "Add to Wish List" icon
+    Then the product should be added to their wish list
 
 
 
-  Scenario: The user can add the product to their wish list when the user clicks Add to Wish List icon
-  from the quick view popup.
+  Scenario: Adding Product to Compare List from Quick View Popup
+    Given the user is viewing a product in the quick view popup
+    When the user clicks the "Compare this Product" icon
+    Then the product should be added to their compare list
 
 
-
-  Scenario: The user can add the product to their compare list when the user clicks Compare this Product
-  icon from the quick view popup
-
-
-
-  Scenario: The user can add the product to their cart when the user clicks add to the cart button
-  from the quick view popup
+  Scenario: Adding Product to Cart from Quick View Popup
+    Given the user is viewing a product in the quick view popup
+    When the user clicks the "Add to Cart" button
+    Then the product should be added to their cart
 
 
-
-  Scenario: The user can increase the number of the products to add to the cart by filling the box
-  from the quick view popup
-
+  Scenario: Increasing Product Quantity in Cart from Quick View Popup
+    Given the user is viewing a product in the quick view popup
+    When the user fills in the quantity box to increase the number of products
+    Then the updated quantity should be reflected in the cart
 
 
 
