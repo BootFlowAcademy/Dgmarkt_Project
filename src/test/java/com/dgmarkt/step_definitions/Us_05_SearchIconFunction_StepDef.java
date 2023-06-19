@@ -1,15 +1,11 @@
 package com.dgmarkt.step_definitions;
 
-import com.dgmarkt.pages.HomePage;
-import com.dgmarkt.pages.LoginPage;
-import com.dgmarkt.pages.LoginPanel;
 import com.dgmarkt.pages.SearchIconPage;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 
 public class Us_05_SearchIconFunction_StepDef   {
-
     SearchIconPage searchIconPage=new SearchIconPage();
     @When("The user clicks search button")
     public void the_user_clicks_search_button() {
