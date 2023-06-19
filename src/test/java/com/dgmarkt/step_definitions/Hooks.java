@@ -14,7 +14,6 @@ public class Hooks {
 
     @Before
     public void setUp() {
-        System.out.println("\tThis is coming from Before method");
         Driver.get().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         Driver.get().manage().window().maximize();
     }
@@ -27,14 +26,5 @@ public class Hooks {
         }
        Driver.closeDriver();
     }
-
-/*    @Before ("@db")
-    public void setUpDB(){
-        System.out.println("\t Connection DB");
-    }
-    @After ("@db")
-    public void tearDownDB(){
-        System.out.println("\t Disconnection DB");
-    }*/
 
 }
