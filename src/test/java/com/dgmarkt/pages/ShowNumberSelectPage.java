@@ -6,12 +6,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
 
-import java.util.List;
-
 public class ShowNumberSelectPage extends BasePage {
     @FindBy(xpath = "//*[@id='input-limit']")
     public WebElement showNumber_select;
-
     public void showDefaultNumberSelect_mtd (String expectedNumber) throws InterruptedException {
         Select showNumber = new Select(showNumber_select);
         expectedNumber = "12";
@@ -53,7 +50,6 @@ public class ShowNumberSelectPage extends BasePage {
         actualNumber = showNumber.getFirstSelectedOption().getText();
         Assert.assertEquals(expectedNumber,actualNumber);
         Thread.sleep(2000);
-
     }
 }
 
