@@ -3,7 +3,6 @@ package com.dgmarkt.pages;
 import com.dgmarkt.utilities.Driver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-
 import java.util.List;
 
 public class CartPage extends BasePage{
