@@ -25,7 +25,6 @@ public class HealthBeautyPage extends BasePage {
         hoverAndClick(item1_hoverOver, item1_addToWishBtn);
         hoverAndClick(item2_hoverOver, item2_addToWishBtn);
     }
-
 }
 
 

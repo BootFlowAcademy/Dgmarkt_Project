@@ -51,7 +51,7 @@ public class Us_19_PopularTagsFunction_StepDef {
     }
 
     @When("The user clicks the back button and clicks the IPhone button and clicks Search button")
-    public void the_user_clicks_the_back_button_and_clicks_the_ı_phone_button_and_clicks_search_button() {
+    public void the_user_clicks_the_back_button_and_clicks_the_i_phone_button_and_clicks_search_button() {
         Driver.get().navigate().back();
         categoryPage.iphoneTagAndSearch_mtd();
         assertTrue(categoryPage.productMatches_msg.isDisplayed());
