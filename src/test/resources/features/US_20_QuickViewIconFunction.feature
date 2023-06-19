@@ -11,13 +11,20 @@ Feature: Quick View Function
     Then Verify that the user is on home page
   @wip
   Scenario: Displaying Quick View Icon on Hover
-    Given The user is on the website's homepage
+    When The user hovers the cursor over the category tab
+    Then Verify that the sees  Sub-Category tabs under the Category Module
+    When The user clicks <subcategory> button
+    Then Verify that the user is on "<Sub-CategoryPage>"
     When The user hovers the cursor over the category tab
     And The user clicks the "Health & Beauty" button
     And The user hovers over the first product on the "Health & Beauty" category page
     Then The quick view icon should be displayed
 
   //Scenario: Browsing a Product with Quick View
+    Given The user hovers the cursor over the category tab
+    Then Verify that the sees Sub-Category tabs under the Category Module
+    When The user clicks <HEALTH & BEAUTY> button
+    Then Verify that the user is on "<Sub-CategoryPage>"
 
 
   Scenario: Adding Product to Wish List from Quick View Popup
