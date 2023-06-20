@@ -1,13 +1,19 @@
 package com.dgmarkt.step_definitions;
 
 import com.dgmarkt.pages.CartPage;
+import com.dgmarkt.pages.CheckoutPage;
 import com.dgmarkt.pages.HomePage;
+import com.dgmarkt.utilities.BrowserUtils;
+import com.dgmarkt.utilities.Driver;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 import org.junit.Assert;
 
 public class Us_04_CurrencyFunction_StepDef {
     HomePage homePage = new HomePage();
+    CartPage cartPage=new CartPage();
+    CheckoutPage checkoutPage=new CheckoutPage();
     String expCurrency = "";
     @Given("The user clicks currency button")
     public void the_user_clicks_currency_button() {
@@ -42,15 +48,35 @@ public class Us_04_CurrencyFunction_StepDef {
         expCurrency = homePage.currencySubmenuByName_mtd(currencyName).getText();
         homePage.currencySubmenuByName_mtd(currencyName).click();
     }
+    @Then("verify that The user sees select currency icon {string}")
+    public void verifyThatTheUserSeesSelectCurrencyIcon(String icon) {
+        Assert.assertEquals(icon, homePage.currentCurrency_text.getText());
+    }
     @Then("verify that The user sees select currency icon")
     public void verify_that_the_user_sees_select_currency_icon() {
         Assert.assertTrue(expCurrency.contains(homePage.currentCurrency_text.getText()));
     }
-
-    @Then("verify that The user sees select currency icon {string}")
-    public void verifyThatTheUserSeesSelectCurrencyIcon(String icon) {
-
-        Assert.assertEquals(icon, homePage.currentCurrency_text.getText());
+    @Then("Verify that total price is in expected currency {string}")
+    public void verify_that_total_price_is_in_expected_currency(String expectedCurrency) {
+     String actTotalPrice=cartPage.totalPrice.getText();
+     Assert.assertTrue(actTotalPrice.contains(expectedCurrency));
+        cartPage.removeAllProductfromCart();
+    }
+    @When("The user clicks continue for billing details with exist credentials")
+    public void the_user_clicks_continue_for_billing_details_with_exist_credentials() {
+        checkoutPage.billingContinue_btn.click();
+    }
+    @When("The user clicks continue for delivery details with exist credentials")
+    public void the_user_clicks_continue_for_delivery_details_with_exist_credentials() {
+        checkoutPage.deliveryContinue_btn.click();
+    }
+    @Then("Verify that confirm order total price is in expected currency {string}")
+    public void verify_that_confirm_order_total_price_is_in_expected_currency(String expCurrecyIcon) {
+        BrowserUtils.waitFor(2);
+        String actTotalPrice= checkoutPage.confirmOrderTotalPrice_text.getText();
+        Assert.assertTrue(actTotalPrice.contains(expCurrecyIcon));
+        Driver.get().navigate().back();
+        cartPage.removeAllProductfromCart();
     }
 }
 
