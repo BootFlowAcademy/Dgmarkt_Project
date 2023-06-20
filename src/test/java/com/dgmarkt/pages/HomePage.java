@@ -22,6 +22,12 @@ public class HomePage extends BasePage{
     public void goToCategory_mtd(){hoverAndClick(category_Btn,healthCat_Btn);
     }
 
+    public void goToSubmenu(String Menu, String Submenu) {
+        Actions actions = new Actions(Driver.get());
+        actions.moveToElement(Driver.get().findElement(By.xpath("//span[text()='"+Menu+"']"))).perform();
+        Driver.get().findElement(By.xpath("(//h4//a[text()='"+Submenu+"'])[1]")).click();
+    }
+
 
 
 

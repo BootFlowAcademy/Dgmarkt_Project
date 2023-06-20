@@ -47,11 +47,7 @@ public class HealthBeautyPage extends BasePage{
         hoverAndClick(item1_hoverOver,item1_addToCompareBtn);
         hoverAndClick(item2_hoverOver,item2_addToCompareBtn);
     }
-    public void goToSubmenu(String Menu, String Submenu) {
-        Actions actions = new Actions(Driver.get());
-        actions.moveToElement(Driver.get().findElement(By.xpath("//span[text()='"+Menu+"']"))).perform();
-        Driver.get().findElement(By.xpath("(//h4//a[text()='"+Submenu+"'])[1]")).click();
-    }
+
 
 }
 

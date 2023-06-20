@@ -2,6 +2,7 @@ package com.dgmarkt.step_definitions;
 
 import com.dgmarkt.pages.ComparisonPage;
 import com.dgmarkt.pages.HealthBeautyPage;
+import com.dgmarkt.pages.HomePage;
 import com.dgmarkt.utilities.BrowserUtils;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
@@ -14,10 +15,11 @@ public class US_16_ProductCompareFunction_StepDefs {
 
     ComparisonPage comparisonPage = new ComparisonPage();
     HealthBeautyPage healthBeautyPage = new HealthBeautyPage();
+    HomePage homePage = new HomePage();
 
     @When("The user hovers the {string} and click {string}")
     public void the_user_hovers_the_and_click(String Menu, String Submenu) {
-        healthBeautyPage.goToSubmenu(Menu,Submenu);
+        homePage.goToSubmenu(Menu,Submenu);
     }
     @Then("Verify that the user is on Comparison Page")
     public void verify_that_the_user_is_on_comparison_page() {
