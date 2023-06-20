@@ -15,7 +15,7 @@ import org
         features = "src/test/resources/features",
         glue = "com/dgmarkt/step_definitions",
         dryRun = false,
-        tags = ""
+        tags = " @BFB1DGMAUT-4"
 )
 public class CukesRunner {
 }

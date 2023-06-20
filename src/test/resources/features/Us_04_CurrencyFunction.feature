@@ -1,4 +1,3 @@
-@BFB1DGMAUT-4
 Feature: Currency Functionality
 
   Background: The user is on home page
@@ -15,13 +14,27 @@ Feature: Currency Functionality
     And The user closes cookies pop up
     Then verify that The user sees euro icon
 
+  @BFB1DGMAUT-4
   Scenario Outline: The user logs in for my account login with valid credential
     Given The user clicks currency button
     Then The user click the "<currencyName>" Button
     And The user closes cookies pop up
-    Then verify that The user sees select currency icon
+    Then verify that The user sees select currency icon "<moneyicon>"
     Examples:
-      | currencyName   |
-      | Euro           |
-      | Pound Sterling |
-      | US Dollar      |
+      | currencyName   | moneyicon |
+      | Euro           | €         |
+      | Pound Sterling | £         |
+      | US Dollar      | $         |
+
+
+
+  Scenario Outline: The user change currency CartPage
+    Given The user click the "<currencyName>" Button
+    And The user closes cookies pop up
+    Then  The user navigates to sub-category "Networking"
+    And The user adds two products to the cart list names "ASUS ROG STRIX GS-AX3000" and "Belkin Secure Flip KVM Switch"
+    When The user clicks cart icon button
+    Then Verify that products are visible dollar
+    Examples:
+      | currencyName |
+      | US Dollar    |

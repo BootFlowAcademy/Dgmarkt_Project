@@ -1,5 +1,6 @@
 package com.dgmarkt.step_definitions;
 
+import com.dgmarkt.pages.CartPage;
 import com.dgmarkt.pages.HomePage;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -45,4 +46,11 @@ public class Us_04_CurrencyFunction_StepDef {
     public void verify_that_the_user_sees_select_currency_icon() {
         Assert.assertTrue(expCurrency.contains(homePage.currentCurrency_text.getText()));
     }
+
+    @Then("verify that The user sees select currency icon {string}")
+    public void verifyThatTheUserSeesSelectCurrencyIcon(String icon) {
+
+        Assert.assertEquals(icon, homePage.currentCurrency_text.getText());
+    }
 }
+
