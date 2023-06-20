@@ -12,6 +12,11 @@ public class CartPage extends BasePage{
     public WebElement removeFirstProductFromCart_btn;
     @FindBy(xpath = "//a[text()='Checkout']")
     public WebElement checkOut_btn;
+    @FindBy(xpath = "(//span[@class='input-group-btn'])[1]/button[1]")
+    public WebElement updateQuantityFirstProductInCart_btn;
+    @FindBy(xpath = "(//input[contains(@name, 'quantity')])[1]")
+    public WebElement quantityFirstProductInCart_text;
+
     public void removeAllProductfromCart(){ //Sepet sayfasındaki ürünlari tek tek siler
         int numberofProduct = numberOfProductInCartList_mtd();
         for (int i = 0; i < numberofProduct; i++) {
