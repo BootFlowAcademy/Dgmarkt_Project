@@ -10,7 +10,7 @@ import org.openqa.selenium.support.ui.Select;
 import java.util.List;
 
 public class HealthBeautyPage extends BasePage {
-    @FindBy(xpath = "(//a[text()='Health & Beauty'])[1]")
+    @FindBy(xpath = "(//a[text()='Health & Beauty'])[2]")
     public WebElement healthAndBeauty_loc;
     @FindBy(xpath = "//*[@title='BaByliss 3663U - Hair rollers']")
     public WebElement item1_hoverOver;
@@ -23,10 +23,9 @@ public class HealthBeautyPage extends BasePage {
     public void addToWish_mtd() {
         scrollToElement(item1_addToWishBtn);
         hoverAndClick(item1_hoverOver, item1_addToWishBtn);
-        hoverAndClick(item2_hoverOver, item2_addToWishBtn);
-    }
+        hoverAndClick(item2_hoverOver, item2_addToWishBtn);    }
+    @FindBy(xpath = "//button[@onclick=\"wishlist.add('7487326');\"]")
+    public WebElement item3_addToWishBtn;
+    @FindBy(xpath = "//div[@class='alert alert-fix alert-success alert-dismissible']")
+    public WebElement successToWish_btn;
 }
-
-
-
-
