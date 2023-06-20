@@ -11,6 +11,9 @@ public class NetworkingPage extends BasePage {
     @FindBy(xpath = "(//a[text()='Networking'])[1]")
     public WebElement networking_loc;
 
+    @FindBy(xpath = "(//*[text()='Product Compare (4)']")
+    public WebElement productCompare_btn;
+
     public void addToCartByProductName_mtd(String productName) { // bu metod Networking sayfasında ürün-isim parametresi ile ürünün sepete eklenmesini sağlar
         WebElement productName_Box = Driver.get().findElement(By.xpath("//a[text()='" + productName + "']/../../.."));
         BrowserUtils.hover(productName_Box);

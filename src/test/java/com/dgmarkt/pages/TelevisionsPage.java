@@ -9,4 +9,8 @@ public class TelevisionsPage extends BasePage {
     @FindBy(xpath = "(//a[text()='Televisions'])[1]")
     public WebElement television_loc;
 
+
+
+
+
 }
