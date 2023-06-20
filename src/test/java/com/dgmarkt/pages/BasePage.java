@@ -49,6 +49,7 @@ public abstract class BasePage {
     public WebElement currencySubMenuPound_btn;
     @FindBy(xpath = "//div[@class='breadcrumbs']//h1")
     public WebElement pageName_text;//Bulunulan sayfanın sayfa ismini locate eder
+
     public WebElement currencySubmenuByName_mtd(String currencyName) {
         WebElement submenuCurrency = Driver.get().findElement(xpath("//*[contains(text(),' " + currencyName + "')]/.."));
         return submenuCurrency;

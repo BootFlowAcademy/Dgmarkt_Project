@@ -40,7 +40,7 @@ public class Us_07_CartIconFunction_StepDef {
     }
     @When("The user clicks view cart button")
     public void the_user_clicks_view_cart_button() {
-        BrowserUtils.waitForVisibility(networkingPage.viewCart_btn, 2);
+        BrowserUtils.waitFor(2);
         networkingPage.viewCart_btn.click();
     }
     @Then("Verify that the user in on Shopping Cart Page")

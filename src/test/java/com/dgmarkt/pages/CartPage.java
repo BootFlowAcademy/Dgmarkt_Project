@@ -12,6 +12,8 @@ public class CartPage extends BasePage{
     public WebElement removeFirstProductFromCart_btn;
     @FindBy(xpath = "//a[text()='Checkout']")
     public WebElement checkOut_btn;
+    @FindBy(xpath = "//*[@id='content']/div[2]/div/table/tbody/tr[2]/td[2]")
+    public WebElement totalPrice;
     @FindBy(xpath = "(//span[@class='input-group-btn'])[1]/button[1]")
     public WebElement updateQuantityFirstProductInCart_btn;
     @FindBy(xpath = "(//input[contains(@name, 'quantity')])[1]")
