@@ -16,16 +16,23 @@ public class WishListPage extends BasePage{
     public WebElement item1_addToCartBtn;
     @FindBy(xpath = "//a[contains(@href,'remove=5720397')]")
     public WebElement item2_removeBtn;
+    @FindBy(xpath = "(//span[@class='txt-count'])[1]")
+    public WebElement wishlistindex_Btn;
+
     @FindBy(xpath = "//a[contains(@href,'remove=7064674')]")
     public WebElement item1_removeBtn;
     @FindBy(css = "#cart")
     public WebElement cart_btn;
+    @FindBy(xpath = "//i[@class='fa fa-times']")
+    public WebElement wishlistremove_btn;
     @FindBy(xpath = "//div[@class='alert alert-success alert-dismissible']")
     public WebElement modifiedAlert_msg;
     @FindBy(xpath = "//div[@class='alert alert-fix alert-success alert-dismissible']")
     public WebElement alert_popUp;
     @FindBy(xpath = "//button[@data-dismiss=\"alert\"]")
     public WebElement popUp_closeBtn;
+    @FindBy(xpath = "//a[@class='a-close-newsletter']")
+    public WebElement newsletter_closeBtn;
     @FindBy(xpath = "//*[.='Your wish list is empty.']")
     public WebElement wishEmpty_text;
     @FindBy(xpath = "//*[@id=\"cart\"]//a[text()='Capsule Plate 6pcs']")
