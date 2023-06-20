@@ -79,4 +79,30 @@ public class WishListPage extends BasePage{
         BrowserUtils.waitForClickablility(cart_btn,3).click();
         BrowserUtils.waitForClickablility(removeFromCart_btn,3).click();
     }
+    @FindBy(xpath = "(//li[@class='li-top-item left '])[2]")
+    public WebElement category2_btn;
+    @FindBy(xpath = "(//h4//a[text()='Televisions'])[1]")
+    public WebElement television_btn;
+    @FindBy(xpath = "(//h4//a[text()='TV Accessories'])[1]")
+    public WebElement tvAccessories_btn;
+    @FindBy(xpath = "(//a[@href='https://dgmarkt.com/index.php?route=account/wishlist'])[1]")
+    public WebElement wishList_btn;
+    @FindBy(xpath = "//a[text()='My Wish List']")
+    public WebElement wishList_msg;
+    @FindBy(xpath = "(//button[@data-original-title='Add to Cart'])[1]")
+    public WebElement addToCart_btn;
+    @FindBy(xpath = "(//button[@data-original-title='Add to Cart'])[2]")
+    public WebElement addToCart2_btn;
+    @FindBy(xpath = "(//button[@data-original-title='Add to Cart'])[3]")
+    public WebElement addToCart3_btn;
+    @FindBy(xpath = "(//button[@data-original-title='Add to Cart'])[4]")
+    public WebElement addToCart4_btn;
+    @FindBy(xpath = "(//i[@class='icon-rt-close-outline'])[2]")
+    public WebElement wishListPageClose_btn;
+    @FindBy(xpath = "//strong[text()='Total']")
+    public WebElement addToCartVerify_msg;
+    @FindBy(xpath = "//a[@data-original-title='Remove']")
+    public WebElement remove_btn;
+    @FindBy(xpath = "//p[text()='Your wish list is empty.']")
+    public WebElement empty_msg;
 }
