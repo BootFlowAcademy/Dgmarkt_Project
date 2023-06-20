@@ -26,11 +26,16 @@ public class HealthBeautyPage extends BasePage{
     @FindBy(xpath = "//*[@onclick=\"wishlist.add('5720397');\"]")
     public WebElement item2_addToWishBtn;
     @FindBy(xpath = "//*[@onclick=\"compare.add('5720397');\"]")
+    public WebElement item3_addToWishBtn;
+    @FindBy(xpath = "//*[@onclick=\"wishlist.add('7487326');\"]")
     public WebElement item2_addToCompareBtn;
     @FindBy(xpath ="//a[@id='compare-total']" )
     public WebElement productCompare_btn;
     @FindBy(xpath ="//button[@class='close']" )
     public WebElement addSucces_msg;
+    @FindBy(xpath ="//div[@class='alert alert-fix alert-success alert-dismissible']" )
+    public WebElement successToWish_btn;
+
 
     public void addToWish_mtd(){
         scrollToElement(item1_addToWishBtn);
