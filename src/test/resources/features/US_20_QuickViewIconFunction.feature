@@ -1,6 +1,6 @@
 @BFB1DGMAUT-20
 Feature: Quick View Function
-  @wip
+
   Background: The user logs in for login panel
     Given The user navigate to web site
     When The user enters login panel credential and clicks login
@@ -9,7 +9,7 @@ Feature: Quick View Function
     When The user clicks the login under the my account
     And The user enters account credentials "soyeroli@yahoo.com" and "Kayserili1" and clicks login
     Then Verify that the user is on home page
-  @wip
+
   Scenario: The user hovers over the product, they can see the quick View Icon.
     When The user hovers the cursor over the category tab
     And Verify that the sees  Sub-Category tabs under the Category Module
