@@ -1,6 +1,5 @@
 package com.dgmarkt.step_definitions;
 
-import com.dgmarkt.pages.CategoryPage;
 import com.dgmarkt.pages.HomePage;
 import com.dgmarkt.utilities.Driver;
 import io.cucumber.java.en.Given;
@@ -33,9 +32,6 @@ public class Us_13_CategoryFunction_StepDef {
     }
     @Then("Verify that the user is on {string}")
     public void verify_that_the_user_is_on(String categoryName) {
-        Assert.assertEquals(categoryName,homePage.pageName_text.getText());
-
+        Assert.assertEquals(categoryName, homePage.pageName_text.getText());
     }
-
-
 }
