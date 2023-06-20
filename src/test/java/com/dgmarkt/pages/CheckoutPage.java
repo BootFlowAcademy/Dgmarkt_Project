@@ -57,6 +57,8 @@ public class CheckoutPage extends BasePage {
     public WebElement confirmOrde_btn;
     @FindBy(xpath = "//a[text()='Success']")
     public WebElement checkoutSucces_text;
+    @FindBy(xpath = "//table[@class='table table-bordered table-hover']/tfoot/tr[3]/td[2]")
+    public WebElement confirmOrderTotalPrice_text;
     public void setSelect_mtd(WebElement selectElement, String selectName){
         selectCountry = new Select(selectElement);
         selectCountry.selectByVisibleText(selectName);
