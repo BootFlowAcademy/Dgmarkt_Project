@@ -1,4 +1,4 @@
-
+@BFB1DGMAUT-2
 Feature: Log out Functionality
 
   Background: The user is on home page
