@@ -4,6 +4,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class SearchIconPage extends BasePage {
+
 @FindBy (xpath= "//div[@class='dropdown-toggle search-button']")
   public WebElement searchIconFunction;
 @FindBy (xpath= "//input[@id='text-search']")
@@ -12,4 +13,8 @@ public class SearchIconPage extends BasePage {
   public  WebElement startSearch_btn;
 @FindBy (xpath= "//p[@class='manufacture-product']/../h4/a")
   public WebElement firstProductName_text;
+
+
+
+
 }
