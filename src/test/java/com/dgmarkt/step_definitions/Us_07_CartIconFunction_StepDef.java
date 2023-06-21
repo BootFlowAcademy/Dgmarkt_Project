@@ -30,6 +30,7 @@ public class Us_07_CartIconFunction_StepDef {
     }
     @Given("The user navigates to sub-category {string}")
     public void the_user_navigates_to_sub_category(String subCategoryName) {
+        BrowserUtils.waitFor(2);
         homePage.goToSubCategoryByName_mtd(subCategoryName);
     }
     @Given("The user adds two products to the cart list names {string} and {string}")
@@ -97,5 +98,17 @@ public class Us_07_CartIconFunction_StepDef {
         String expPageName = "Your Order Has Been Placed!";
         String actPageName = checkoutPage.pageName_text.getText();
         Assert.assertEquals(expPageName, actPageName);
+    }
+    @When("The user changes first added products quantity to {string}")
+    public void the_user_changes_first_added_products_quantity_to(String quantity) {
+cartPage.quantityFirstProductInCart_text.clear();
+cartPage.quantityFirstProductInCart_text.sendKeys(quantity);
+cartPage.updateQuantityFirstProductInCart_btn.click();
+    }
+    @Then("the user verify that first added products quantity is {string}")
+    public void the_user_verify_that_first_added_products_quantity_is(String expQuantity) {
+        String actQuantity =cartPage.quantityFirstProductInCart_text.getAttribute("value");
+        Assert.assertEquals(expQuantity,actQuantity);
+        cartPage.removeAllProductfromCart();
     }
 }

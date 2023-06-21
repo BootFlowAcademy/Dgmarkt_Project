@@ -5,7 +5,6 @@ import org.junit.Assert;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
-
 import java.util.List;
 
 public class ShowNumberSelectPage extends BasePage {
@@ -21,9 +20,7 @@ public class ShowNumberSelectPage extends BasePage {
     }
     public void setShowNumberReplace_mtd(List<String> listOfNumber) {
         Select showNumber = new Select(showNumber_select);
-
         for (int i = 1; i < 5; i++) {
-
             showNumber.selectByIndex(i);
             String expectedNumber=listOfNumber.get(i-1);
             String actualNumber = showNumber.getFirstSelectedOption().getText();

@@ -13,7 +13,3 @@ Feature: Log out Functionality
     When The user clicks to My Account button
     And The user clicks to Logout button
     Then Verify that the user has securely terminated the session and sees the Account Logout box
-
-
-
-

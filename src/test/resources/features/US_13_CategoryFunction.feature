@@ -23,6 +23,3 @@ Feature: Category Functionality
   Scenario: The user goes to Category Module
     Given The user click the Category
     Then Verify that the user is on Category Module
-
-
-

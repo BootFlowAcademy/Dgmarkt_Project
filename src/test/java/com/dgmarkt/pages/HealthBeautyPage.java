@@ -1,13 +1,8 @@
 package com.dgmarkt.pages;
 
 import static com.dgmarkt.utilities.BrowserUtils.*;
-
-import org.junit.Assert;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.Select;
-
-import java.util.List;
 
 public class HealthBeautyPage extends BasePage {
     @FindBy(xpath = "(//a[text()='Health & Beauty'])[2]")
