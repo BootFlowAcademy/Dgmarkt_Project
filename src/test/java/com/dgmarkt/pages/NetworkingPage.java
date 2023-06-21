@@ -15,6 +15,9 @@ public class NetworkingPage extends BasePage {
         BrowserUtils.hover(productName_Box);
         WebElement addToCart_BtnOfProduct = Driver.get().findElement(By.xpath("//a[text()='" + productName + "']/../..//button"));
         BrowserUtils.waitForVisibility(addToCart_BtnOfProduct, 3);
-        addToCart_BtnOfProduct.click();
-    }
+        addToCart_BtnOfProduct.click();    }
+    @FindBy(xpath = "//button[@onclick=\"wishlist.add('7463434');\"]")
+    public WebElement item5_addToWishBtn;
+    @FindBy(xpath = "(//a[text()='Networking'])[2]")
+    public WebElement networking2_loc;
 }
