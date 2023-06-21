@@ -3,7 +3,6 @@ package com.dgmarkt.step_definitions;
 import com.dgmarkt.pages.EditInformationPage;
 import com.dgmarkt.pages.HomePage;
 import com.dgmarkt.utilities.BrowserUtils;
-import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;

@@ -1,9 +1,6 @@
 package com.dgmarkt.pages;
 
 import static com.dgmarkt.utilities.BrowserUtils.*;
-import static org.openqa.selenium.By.xpath;
-
-import com.dgmarkt.utilities.Driver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 

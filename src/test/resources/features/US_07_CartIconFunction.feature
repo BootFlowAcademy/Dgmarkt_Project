@@ -1,4 +1,4 @@
-
+@BFB1DGMAUT-7
 Feature: Cart Icon Function
 
   Background: The user is on home page
@@ -8,7 +8,7 @@ Feature: Cart Icon Function
     And The user clicks the login under the my account
     And The user enters account credentials "onuraudit@gmail.com" and "test.12345" and clicks login
     And The user navigates to sub-category "Networking"
-    And The user adds two products to the cart list names "ASUS ROG STRIX GS-AX3000" and "Belkin Secure Flip KVM Switch"
+    And The user adds two products to the cart list names "ASUS PCE-AC51 - network adapter" and "ASUS PCE-AX58BT - network adapter"
 
   Scenario: The user should be able to see added product list by click cart icon
     When The user clicks cart icon button
@@ -45,8 +45,8 @@ Feature: Cart Icon Function
     And The user adds comment about his order "Thanks! Everything is ok!" and clicks checkbox to agree Terms and Conditions and clicks continue
     And The user checks and clicks confirm order
     Then The user is on success page
-  @BFB1DGMAUT-7
-    Scenario: The user should be able to change quantities of added product on car page
+
+    Scenario: The user should be able to change quantities of added product on cart page
       Given The user clicks cart icon button
       And The user clicks view cart button
       When The user changes first added products quantity to "3"

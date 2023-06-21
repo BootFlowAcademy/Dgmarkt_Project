@@ -37,5 +37,3 @@ Feature: Show (number of products per page) Function
       | Televisions     |
       | TV Accessories  |
       | Networking      |
-
-
