@@ -20,7 +20,6 @@ public class QuickViewIconPage extends BasePage {
     public WebElement quantityquickview-content;
 
 
-
    @FindBy(xpath = "//*[@id="button-cart"]")
     WebElement addToCartButton;
 
