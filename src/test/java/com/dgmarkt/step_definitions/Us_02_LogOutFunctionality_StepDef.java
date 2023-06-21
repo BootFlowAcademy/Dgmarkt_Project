@@ -2,26 +2,20 @@ package com.dgmarkt.step_definitions;
 
 import com.dgmarkt.pages.HomePage;
 import com.dgmarkt.pages.LoginPage;
-import com.dgmarkt.pages.LoginPanel;
 import com.dgmarkt.utilities.BrowserUtils;
-import com.dgmarkt.utilities.ConfigurationReader;
 import com.dgmarkt.utilities.Driver;
-import io.cucumber.java.bs.A;
-import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 
 public class Us_02_LogOutFunctionality_StepDef {
     HomePage homePage = new HomePage();
-    LoginPanel loginPanel=new LoginPanel();
     LoginPage loginPage=new LoginPage();
     String unExpectedWindowId="";
     @When("The user clicks to My Account button")
     public void the_user_clicks_to_my_account_button() {
+        BrowserUtils.waitForClickablility(homePage.myAccount_btn,2);
         homePage.myAccount_btn.click();
     }
     @When("The user clicks to Logout button")
@@ -61,21 +55,22 @@ public class Us_02_LogOutFunctionality_StepDef {
     }
     @When("The user waits {int} minutes without any movement on the site")
     public void the_user_waits_minutes_without_any_movement_on_the_site(int waitMinutes) {
-        BrowserUtils.waitFor(waitMinutes*6);
+        BrowserUtils.waitFor(waitMinutes*60);
     }
     @When("The user clicks to Refresh Button")
     public void the_user_clicks_to_refresh_button() {
-    Driver.get().navigate().refresh();
+        Driver.get().navigate().refresh();
+        loginPage.popUpExit_btn.click();
     }
     @Then("Verify that automatic logged out of the site")
     public void verify_that_automatic_logged_out_of_the_site() {
-        loginPage.popUpExit_btn.click();
-        loginPage.myAccount_btn.click();
-        Assert.assertFalse(loginPage.accountLogin_btn.isDisplayed());
+        Assert.assertFalse(loginPage.logout_btn.isDisplayed());
     }
-    @When("The user navigate to {string}")
-    public void the_user_navigate_to(String url) {
+    @When("The user navigates to {string}")
+    public void the_user_navigates_to(String url) {
         Driver.get().navigate().to(url);
+        BrowserUtils.waitForPageToLoad(2);
+
     }
     @Then("Verify that the {string} page opens")
     public void verify_that_the_page_opens(String expUrl) {
@@ -83,8 +78,10 @@ public class Us_02_LogOutFunctionality_StepDef {
     }
     @Then("The user  waits  {int} minutes and clicks to *Click to go back button*")
     public void the_user_waits_minutes_and_clicks_to_click_to_go_back_button(int waitMinutes) {
-        BrowserUtils.waitFor(waitMinutes*6);
+        BrowserUtils.waitFor(waitMinutes*60);
         Driver.get().navigate().back();
+        loginPage.popUpExit_btn.click();
+        homePage.myAccount_btn.click();
     }
 
 }
