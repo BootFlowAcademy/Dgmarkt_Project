@@ -1,4 +1,4 @@
-@BFB1DGMAUT-7
+
 Feature: Cart Icon Function
 
   Background: The user is on home page
@@ -10,15 +10,18 @@ Feature: Cart Icon Function
     And The user navigates to sub-category "Networking"
     And The user adds two products to the cart list names "ASUS PCE-AC51 - network adapter" and "ASUS PCE-AX58BT - network adapter"
 
+  @BFB1DGMAUT-41
   Scenario: The user should be able to see added product list by click cart icon
     When The user clicks cart icon button
     Then Verify that added product list is displayed
 
+  @BFB1DGMAUT-43
   Scenario: The user should be able to see product in cart list if add any product by click cart icon
     When The user clicks cart icon button
     And The user clicks view cart button
     Then Verify that added products are 2 in CartPage
 
+  @BFB1DGMAUT-44
   Scenario: The user should be able to go to the Checkout page from the cart icon and complete the checkout
     Given The user clicks cart icon button
     And The user clicks view cart button
@@ -46,8 +49,16 @@ Feature: Cart Icon Function
     And The user checks and clicks confirm order
     Then The user is on success page
 
-    Scenario: The user should be able to change quantities of added product on cart page
-      Given The user clicks cart icon button
-      And The user clicks view cart button
-      When The user changes first added products quantity to "3"
-      Then the user verify that first added products quantity is "3"
+  @BFB1DGMAUT-45
+  Scenario: The user should be able to change quantities of added product on cart page
+    Given The user clicks cart icon button
+    And The user clicks view cart button
+    When The user changes first added products quantity to "3"
+    Then the user verify that first added products quantity is "3"
+
+  @BFB1DGMAUT-7
+  Scenario: The user sees how many product in cart near Cart Icon when user login
+    When The user logs out and closes the driver
+    And The user navigate to web site again
+    And The user enters account credentials "onuraudit@gmail.com" and "test.12345" again
+    Then Verify that added products are "2" near the cart icon
