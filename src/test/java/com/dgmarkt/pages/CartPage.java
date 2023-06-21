@@ -8,12 +8,20 @@ import org.openqa.selenium.support.FindBy;
 import java.util.List;
 
 public class CartPage extends BasePage{
+
+    ComparisonPage comparisonPage = new ComparisonPage();
+
     @FindBy(xpath = "(//span[@class='input-group-btn'])[1]/button[2]")
     public WebElement removeFirstProductFromCart_btn;
     @FindBy(xpath = "//a[text()='Checkout']")
     public WebElement checkOut_btn;
     @FindBy(xpath = "//*[@id='content']/div[2]/div/table/tbody/tr[2]/td[2]")
     public WebElement totalPrice;
+    @FindBy(xpath = "//*[@class=\"fa fa-times-circle\"]")
+    public WebElement remove_btn;
+
+
+
     public void removeAllProductfromCart(){ //Sepet sayfasındaki ürünlari tek tek siler
         int numberofProduct = numberOfProductInCartList_mtd();
         for (int i = 0; i < numberofProduct; i++) {
@@ -25,5 +33,7 @@ public class CartPage extends BasePage{
        List<WebElement> allProductRowInCartList = Driver.get().findElements(By.xpath("(//table)[3]/tbody/tr"));
         return allProductRowInCartList.size();
     }
+
+
 
 }

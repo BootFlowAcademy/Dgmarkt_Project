@@ -8,7 +8,7 @@ Feature: Wish List Function
     When The user clicks the login under the my account
     And The user enters account credentials "mail123@mail.com" and "password123" and clicks login
     Then Verify that the user is on home page
-
+  @wip
   Scenario: The user should be able to see products in the Wish List
     When The user navigates to Health & Beauty category
     And The user adds products to the wish list

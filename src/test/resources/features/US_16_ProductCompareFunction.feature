@@ -8,8 +8,7 @@ Feature: Product Compare Function
     When The user clicks the login under the my account
     And The user enters account credentials "nezih@bootflow.academy" and "12345" and clicks login
     Then Verify that the user is on home page
-
-
+  @BFB1DGMAUT-16
   Scenario Outline: The user should be able to navigate the Product Compare Page when the User clicks on the Product Compare
     When The user hovers the "<Menu>" and click "<Submenu>"
     And The user clicks Product Compare button
@@ -20,13 +19,32 @@ Feature: Product Compare Function
       | Category | Televisions     |
       | Category | TV Accessories  |
       | Category | Networking      |
-
   @BFB1DGMAUT-16
   Scenario: The user should be able to see the Products they want to compare on the Product Comparison page
     When The user navigates to Health & Beauty category
     And The user adds products to the compare page
     And The user clicks Product Compare button
     Then Verify that the user can see "BaByliss 3663U - Hair rollers" and "Capsule Plate 6pcs" on the Comparison Page
+  @BFB1DGMAUT-16
+  Scenario: The user should be able to add 5 products to the Product Comparison page
+    When The user navigates to Health & Beauty category
+    And The user adds five products to the compare page
+    Then Verify that "Product Compare (5)" products have been added to the comparison page
+  @BFB1DGMAUT-16
+  Scenario: The user should be able to add products to Cart from Comparison Page
+    When The user navigates to Health & Beauty category
+    And The user adds products to the compare page
+    And The user clicks Product Compare button
+    And The user adds the product to cart using Add to Cart button
+    Then Verify that the user sees the product in the Cart
+  @BFB1DGMAUT-16
+  Scenario: The user should be able to remove products to Cart from Comparison Page
+    When The user navigates to Health & Beauty category
+    And The user adds products to the compare page
+    And The user clicks Product Compare button
+    And The user removes the product to cart using Add to Cart button
+    Then Verify that the user removes the product in the Cart
 
-  Scenario: The user receives a warning message when they want to add more than four Products to the Product Comparison page
+
+
 
