@@ -7,6 +7,29 @@ import io.cucumber.java.en.When;
 public class Us_20_QuickViewIconFunction_StepDef {
 
 
+    @When("The user clicks the {string} Category button")
+    public void the_user_clicks_the_category_button(String string) {
+        // Write code here that turns the phrase above into concrete actions
+        throw new io.cucumber.java.PendingException();
+    }
+
+    @When("The user hovers over the first product on the {string} page")
+    public void the_user_hovers_over_the_first_product_on_the_page(String string) {
+        // Write code here that turns the phrase above into concrete actions
+        throw new io.cucumber.java.PendingException();
+    }
+
+    @When("The user can see first product {string}")
+    public void the_user_can_see_first_product(String string) {
+        // Write code here that turns the phrase above into concrete actions
+        throw new io.cucumber.java.PendingException();
+    }
+
+    @Then("The quick view icon should be displayed")
+    public void the_quick_view_icon_should_be_displayed() {
+        // Write code here that turns the phrase above into concrete actions
+        throw new io.cucumber.java.PendingException();
+    }
 
 
 //scenario 6
