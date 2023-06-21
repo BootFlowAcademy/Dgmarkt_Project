@@ -8,7 +8,7 @@ Feature: Log out Functionality
     When The user clicks the login under the my account
     And The user enters account credentials "yavsev97@hotmail.com" and "ys198997" and clicks login
     Then Verify that the user is on home page
-
+  @BFB1DGMAUT-2
   Scenario: The user should be able to log out
     When The user clicks to My Account button
     And The user clicks to Logout button
