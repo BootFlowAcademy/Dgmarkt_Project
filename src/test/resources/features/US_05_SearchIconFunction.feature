@@ -13,3 +13,15 @@ Feature: Search Icon Functıon
     When The user clicks search button
     And The user enters "televısıon" in search button
     Then Verify that  user confirms that they see the product they are looking for "televısıon"
+
+  Scenario Outline:The user should be able to search for products in the search button.
+    When The user clicks search button
+    And The user enters "<searchword>" in search button
+    Then Verify that user get search message "<searchmessage>"
+    Examples:
+      | searchword | searchmessage |
+      | chair      | There is no product that matches the search criteria. |
+      | masa      | There is no product that matches the search criteria. |
+
+
+
