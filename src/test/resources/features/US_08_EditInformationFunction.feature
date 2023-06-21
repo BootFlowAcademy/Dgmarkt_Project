@@ -15,13 +15,11 @@ Feature: Edit Information Function
     Given The user should be able to make various changes on the page that opens
     When Verify that you can click the continue button
 
-
   Scenario Outline: Verify that the user is able to display the error message when entering or not entering invalid user information.
     Given The user clicks on the my account button under the my account tab
     When The user should be click on the edit my account tab on the page that opens
     And The user enters credentials "<firstName>", "<lastName>", "<eMail>", "<telephone>" in field
     Then Verify that warning message is displayed.
-
     Examples:
       | firstName | lastName    | eMail             | telephone   |
       | .         | Deniz       | denizel@gmail.com | 05322222222 |

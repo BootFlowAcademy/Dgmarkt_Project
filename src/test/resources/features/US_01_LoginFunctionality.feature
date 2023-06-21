@@ -23,8 +23,3 @@ Feature: Login Functionality
       | ortakoyadnan@gmail.com |             |
       | invalidemail@gmail.com | 1234        |
       | ortakoyadnan@gmail.com | invalid1234 |
-
-
-
-
-

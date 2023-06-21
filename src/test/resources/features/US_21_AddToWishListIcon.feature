@@ -20,3 +20,7 @@ Feature: Login Functionality
       | Televisions     | Televisions      |
       | TV Accessories  | TV Accessories   |
       | Networking      | Networking       |
+
+    Scenario: The user verifies wishlist box and clears the wishlist
+      And The user verifies contents of the wishlist box
+      Then The user clears contents of the wishlist box

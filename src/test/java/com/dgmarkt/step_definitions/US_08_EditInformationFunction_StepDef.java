@@ -1,21 +1,15 @@
 package com.dgmarkt.step_definitions;
 
-import com.dgmarkt.pages.AccountPage;
 import com.dgmarkt.pages.EditInformationPage;
 import com.dgmarkt.pages.HomePage;
 import com.dgmarkt.utilities.BrowserUtils;
-import io.cucumber.java.bs.A;
-import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 
-import static org.junit.Assert.assertFalse;
-
 public class US_08_EditInformationFunction_StepDef {
     HomePage homePage = new HomePage();
     EditInformationPage editInformationPage = new EditInformationPage();
-
     @When("The user clicks on the my account button under the my account tab")
     public void the_user_clicks_on_the_my_account_button_under_the_my_account_tab() {
         homePage.myAccount_btn.click();
@@ -43,9 +37,4 @@ public class US_08_EditInformationFunction_StepDef {
         Assert.assertFalse(editInformationPage.editSuccess_msg.isDisplayed());
     }
 }
-
-
-
-
-
 
