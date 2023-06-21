@@ -16,5 +16,6 @@ import org.junit.runner.RunWith;
         dryRun = false,
         tags = "@BFB1DGMAUT-12"
 )
+
 public class CukesRunner {
 }

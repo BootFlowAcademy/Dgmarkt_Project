@@ -29,7 +29,7 @@ public abstract class BasePage {
     public WebElement wishlist_Btn;
     @FindBy(xpath = "//a[@id='pt-logout-link']/..")
     public WebElement logout_btn;
-    @FindBy (xpath = "//a[text()='My Account'][1]")
+    @FindBy(xpath = "//a[text()='My Account'][1]")
     public WebElement myAccountShow_btn;
     @FindBy(xpath = "//a[@href='https://dgmarkt.com/index.php?route=checkout/cart']")
     public WebElement viewCart_btn;
@@ -39,12 +39,28 @@ public abstract class BasePage {
     public WebElement currency_btn;
     @FindBy(xpath = "//*[contains(text(),' Euro')]/..")
     public WebElement currencySubMenuEuro_btn;
+    @FindBy(xpath = "//*[@id='form-currency']/div/ul/li[3]/button")
+    public WebElement currencySubMenuDollar_btn;
     @FindBy(xpath = "//*[text()='Currency']/../span[1]")
     public WebElement currentCurrency_text;
+    @FindBy(xpath = "//*[@id='form-currency']/div/ul/li[2]/button")
+    public WebElement currencySubMenuPound_btn;
+    @FindBy(xpath = "//div[@class='breadcrumbs']//h1")
+    public WebElement pageName_text;//Bulunulan sayfanın sayfa ismini locate eder
+
+    public WebElement currencySubmenuByName_mtd(String currencyName) {
+        WebElement submenuCurrency = Driver.get().findElement(xpath("//*[contains(text(),' " + currencyName + "')]/.."));
+        return submenuCurrency;
+    }
+    public void goToSubCategoryByName_mtd(String subCategoryName) {
+        WebElement subCategory = Driver.get().findElement(xpath("//a[text()='" + subCategoryName + "']/../.."));
+        BrowserUtils.hoverAndClick(category_btn, subCategory);
     @FindBy(xpath = "(//a[text()='Order History'])[1]")
     public WebElement orderHistory_btn;
     public void goToSubCategoryByName_mtd(String subCategoryName){
         WebElement subCategory = Driver.get().findElement(xpath("//a[text()='"+subCategoryName+"']/../.."));
         BrowserUtils.hoverAndClick(category_btn,subCategory);
     }
+    @FindBy(xpath = "(//li[@class='li-top-item left '])[2]")
+    public WebElement category2_btn;
 }

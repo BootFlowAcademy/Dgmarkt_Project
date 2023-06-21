@@ -30,4 +30,8 @@ public class Us_13_CategoryFunction_StepDef {
         String actualUrl = Driver.get().getCurrentUrl();
         Assert.assertEquals(expectedUrl, actualUrl);
     }
+    @Then("Verify that the user is on {string}")
+    public void verify_that_the_user_is_on(String categoryName) {
+        Assert.assertEquals(categoryName, homePage.pageName_text.getText());
+    }
 }

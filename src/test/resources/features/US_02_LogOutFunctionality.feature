@@ -14,6 +14,27 @@ Feature: Log out Functionality
     And The user clicks to Logout button
     Then Verify that the user has securely terminated the session and sees the Account Logout box
 
+  Scenario: The user should be able to log out with Exit Button (X)
+    When The user clicks to Exit Button (X)  for the browser close
+    Given The user navigate to web site
+    Then The user verify that current browser is not old browser
+    Then Verify that the user has securely terminated the session and the login panel page is open
 
+  Scenario: The user cannot re-login with "back to page"  icon in browser, if the user has successfully logged out
+    When The user clicks to My Account button
+    And The user clicks to Logout button
+    Then Verify that the user has securely terminated the session and sees the Account Logout box
+    And  The user clicks to Go Back Button
+    Then Verify that successfully logged out
 
+  Scenario: The user should be automatic logout when there is no movement on the site for a certain period of time
+    When The user waits 10 minutes without any movement on the site
+    And  The user clicks to Refresh Button
+    And The user clicks to My Account button
+    Then Verify that automatic logged out of the site
 
+  Scenario: The user should be see the session is not active when click to go back after 10 minutes if navigate to a new web site
+    When The user navigates to "https://www.google.com/"
+    Then Verify that the "https://www.google.com/" page opens
+    And The user  waits  10 minutes and clicks to *Click to go back button*
+    Then Verify that automatic logged out of the site
