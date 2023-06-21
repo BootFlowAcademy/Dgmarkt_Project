@@ -47,20 +47,20 @@ public abstract class BasePage {
     public WebElement currencySubMenuPound_btn;
     @FindBy(xpath = "//div[@class='breadcrumbs']//h1")
     public WebElement pageName_text;//Bulunulan sayfanın sayfa ismini locate eder
+    @FindBy(xpath = "(//li[@class='li-top-item left '])[2]")
+    public WebElement category2_btn;
+    @FindBy(xpath = "(//a[text()='Order History'])[1]")
+    public WebElement orderHistory_btn;
 
     public WebElement currencySubmenuByName_mtd(String currencyName) {
         WebElement submenuCurrency = Driver.get().findElement(xpath("//*[contains(text(),' " + currencyName + "')]/.."));
         return submenuCurrency;
     }
-    public void goToSubCategoryByName_mtd(String subCategoryName) {
-        WebElement subCategory = Driver.get().findElement(xpath("//a[text()='" + subCategoryName + "']/../.."));
-        BrowserUtils.hoverAndClick(category_btn, subCategory);
-    @FindBy(xpath = "(//a[text()='Order History'])[1]")
-    public WebElement orderHistory_btn;
+
+
     public void goToSubCategoryByName_mtd(String subCategoryName){
         WebElement subCategory = Driver.get().findElement(xpath("//a[text()='"+subCategoryName+"']/../.."));
         BrowserUtils.hoverAndClick(category_btn,subCategory);
     }
-    @FindBy(xpath = "(//li[@class='li-top-item left '])[2]")
-    public WebElement category2_btn;
+
 }
