@@ -5,7 +5,7 @@ import org.openqa.selenium.support.FindBy;
 
 public class QuickViewIconPage extends BasePage {
 
-    @FindBy(xpath = "//*[@id="content"]/div/div[2]/div[4]/div/div/div[1]/div/div[2]/div/button[3]")
+    /*@FindBy(xpath = "//*[@id="content"]/div/div[2]/div[4]/div/div/div[1]/div/div[2]/div/button[3]")
     public WebElement quickViewIcon;
 
     @FindBy(xpath = "//*[@id="quickview-content"]/div/div/div[1]")
@@ -46,7 +46,7 @@ public class QuickViewIconPage extends BasePage {
     @FindBy(xpath = "//*[@id="quickview-content"]/div[1]")
     public WebElement getGetSuccessMessageAddToProductComparison;
 
-
+*/
 
 
 }
