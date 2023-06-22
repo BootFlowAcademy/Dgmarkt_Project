@@ -7,7 +7,7 @@ Feature: Subcategory product view function
     And The user closes cookies pop up
     When The user clicks the login under the my account
     And The user enters account credentials "sdeniz@gmail.com" and "12345" and clicks login
-
+  @BFB1DGMAUT-129
   Scenario Outline: The user should be able to choose view type on subcategory "<subcategory>"
     When The user navigates to sub-category by "<subcategory>"
     And The user click the "2" product view button
