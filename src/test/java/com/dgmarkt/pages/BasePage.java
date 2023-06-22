@@ -21,7 +21,7 @@ public abstract class BasePage {
     public WebElement cartIcon_btn;
     @FindBy(xpath = "//ul[@class='dropdown-menu pull-right']")
     public WebElement cartProduct_list;
-    @FindBy(xpath = "(//li[@class='li-top-item left '])[1]")
+    @FindBy(xpath = "//span[text()='Category']/../..")
     public WebElement category_btn;
     @FindBy(xpath = "(//div[@class='mega-menu-container sub-menu-container left '])[1]")
     public WebElement categorySubMenu_DropDown;
@@ -56,11 +56,8 @@ public abstract class BasePage {
         WebElement submenuCurrency = Driver.get().findElement(xpath("//*[contains(text(),' " + currencyName + "')]/.."));
         return submenuCurrency;
     }
-
-
     public void goToSubCategoryByName_mtd(String subCategoryName){
         WebElement subCategory = Driver.get().findElement(xpath("//a[text()='"+subCategoryName+"']/../.."));
         BrowserUtils.hoverAndClick(category_btn,subCategory);
     }
-
 }

@@ -1,6 +1,7 @@
 package com.dgmarkt.step_definitions;
 
 import com.dgmarkt.pages.HomePage;
+import com.dgmarkt.utilities.BrowserUtils;
 import com.dgmarkt.utilities.Driver;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -14,14 +15,18 @@ public class Us_13_CategoryFunction_StepDef {
     @When("The user hovers the cursor over the category tab")
     public void the_user_hovers_the_cursor_over_the_category_tab() {
         Assert.assertFalse(homePage.categorySubMenu_DropDown.isDisplayed());
+        BrowserUtils.waitFor(2);
         actions.moveToElement(homePage.category_btn).perform();//Bu metod Category sekmesinde  HoverOver yapar.
+
     }
     @Then("Verify that the sees  Sub-Category tabs under the Category Module")
     public void verify_that_the_sees_sub_category_tabs_under_the_category_module() {
+        BrowserUtils.waitFor(3);
         Assert.assertTrue(homePage.categorySubMenu_DropDown.isDisplayed());
     }
     @Given("The user click the Category")
     public void the_user_click_the_category() {
+        BrowserUtils.waitFor(3);
         homePage.category_btn.click();
     }
     @Then("Verify that the user is on Category Module")
