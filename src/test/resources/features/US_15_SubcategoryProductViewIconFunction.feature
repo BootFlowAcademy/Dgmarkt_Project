@@ -6,18 +6,21 @@ Feature: Subcategory product view function
     When The user enters login panel credential and clicks login
     And The user closes cookies pop up
     When The user clicks the login under the my account
-    And The user enters account credentials "ders@dgmarkt.com" and "2574dGlogin" and clicks login
+    And The user enters account credentials "sdeniz@gmail.com" and "12345" and clicks login
 
-
-  Scenario Outline: The user goes to category module
-    When The user hovers the cursor over the category tab
-    Then Verify that the sees  Sub-Category tabs under the Category Module
-    When The user clicks "<subcategory>" button
-    #And The user click the "<viewProductBtn>" product view button
-   # Then Verify that the user change the view to "<seeProduct>" products side by side
+  Scenario Outline: The user should be able to choose view type on subcategory "<subcategory>"
+    When The user navigates to sub-category by "<subcategory>"
+    And The user click the "2" product view button
+    Then Verify that the user sees  "active" choose view "2"
+    And The user click the "3" product view button
+    Then Verify that the user sees  "active" choose view "3"
+    And The user click the "4" product view button
+    Then Verify that the user sees  "active" choose view "4"
+    And The user click the "List" product view button
+    Then Verify that the user sees  "active" choose view "List"
     Examples:
-      | subcategory     | viewProductBtn | seeProduct |
-      | Health & Beauty | 2              | active|
-      | Televisions     | 3              | active           |
-      | TVAccessories   | 4              | active           |
-      | Networking      | List           |  active          |
+      | subcategory     |
+      | Health & Beauty |
+      | Televisions     |
+      | TV Accessories  |
+      | Networking      |

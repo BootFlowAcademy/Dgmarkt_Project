@@ -1,30 +1,26 @@
 package com.dgmarkt.pages;
 
+import com.dgmarkt.utilities.BrowserUtils;
 import com.dgmarkt.utilities.Driver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import static org.openqa.selenium.By.xpath;
 
 public class ProductViewIconPage extends BasePage {
-    HomePage homePage=new HomePage();
+    @FindBy(xpath = "//span[text()='Category']/../..")
+    public WebElement categoryView_btn;
 
-    @FindBy(xpath ="//button[text()='1']")
-    public WebElement viewIcon;
-
-    @FindBy(xpath ="//button[@title='List']")
-    public WebElement viewIcon_List;
-
-
-
-    public void clickViewIcon(String view){
+    public void goToSubCategoryByNameView_mtd(String subCategoryName){
+        WebElement subCategory = Driver.get().findElement(xpath("//a[text()='"+subCategoryName+"']/../.."));
+       BrowserUtils.waitFor(2);
+        subCategory.click();
+    }
+    public WebElement clickViewIcon(String view){
       if (view.equals("List")){
-          Driver.get().findElement(By.xpath("//button[@title='"+view+"']")).click();
-
+          return Driver.get().findElement(By.xpath("//button[text()='3']/../button[6]"));
       }else {
-          Driver.get().findElement(By.xpath("//button[text()='" + view + "']")).click();
+         return Driver.get().findElement(By.xpath("//button[text()='" + view + "']"));
       }
     }
-
-
-
 }
