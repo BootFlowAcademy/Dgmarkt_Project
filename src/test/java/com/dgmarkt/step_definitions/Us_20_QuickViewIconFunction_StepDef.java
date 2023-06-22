@@ -36,28 +36,15 @@ public class Us_20_QuickViewIconFunction_StepDef {
         quickViewIconPage.quickViewIcon.click();
 
     }
-    @Then("Verify the user should see the product page")
-    public void verify_the_user_should_see_the_product_page() {
-    //assertEquals("NICKY CLARKE NHD146 HAIR THERAPY TOUCH CONTROL HAIR DRYER", quickViewIconPage.quickViewProduct_txt.getText());
-   // System.out.println("quickViewIconPage.quickViewProduct_txt.getText() = " + quickViewIconPage.quickViewProduct_txt.getText());
-   // BrowserUtils.waitFor(2);
-    }
-    @Given("The user clicks the Add to Wish List Icon")
-    public void the_user_clicks_the_add_to_wish_list_ıcon() {
-    healthBeautyPage.item3_addToWishBtn.sendKeys(Keys.ENTER);
-    }
 
-    @Given("The user clicks the compare this product Icon")
-    public void the_user_clicks_the_compare_this_product_ıcon() {
-    quickViewIconPage.quickViewCompare_btn.click();
-    }
 
-    @Given("The user clicks the Add to cart Icon")
+
+    @When("The user clicks the Add to cart Icon")
     public void the_user_clicks_the_add_to_cart_ıcon() {
     quickViewIconPage.addToCartButton.click();
     }
 
-    @Given("The user clicks the quantity box")
+    @When("The user clicks the quantity box")
     public void the_user_clicks_the_quantity_box() {
 quickViewIconPage.quantityBox_txt.clear();
 
@@ -65,12 +52,13 @@ quickViewIconPage.quantityBox_txt.clear();
     @When("The user fills in the quantity box to increase the number of products")
     public void the_user_fills_in_the_quantity_box_to_increase_the_number_of_products() {
         quickViewIconPage.quantityBox_txt.sendKeys("2");
+        BrowserUtils.waitFor(1);
         quickViewIconPage.addToCartButton.click();
         BrowserUtils.waitFor(2);
 
 
     }
-    @Then("The user closes the product popup page")
+    @When("The user closes the product popup page")
     public void the_user_closes_the_product_popup_page() {
     quickViewIconPage.quickViewPopUpClose_btn.click();
     }
@@ -111,5 +99,60 @@ quickViewIconPage.quantityBox_txt.clear();
         actions.moveToElement(element).perform();
         quickViewIconPage.quickViewIcon3.click();
     }
+
+    @Then("Verify the user should see the first product page")
+    public void verify_the_user_should_see_the_first_product_page() {
+        assertEquals("NICKY CLARKE NHD146 HAIR THERAPY TOUCH CONTROL HAIR DRYER", quickViewIconPage.quickViewProduct_txt.getText());
+        BrowserUtils.waitFor(1);
+    }
+    @When("The user clicks the first product Add to Wish List Icon")
+    public void the_user_clicks_the_first_product_add_to_wish_list_ıcon() {
+        healthBeautyPage.item3_addToWishBtn.sendKeys(Keys.ENTER);
+    }
+    @When("The user clicks the compare this first product Icon")
+    public void the_user_clicks_the_compare_this_first_product_ıcon() {
+        quickViewIconPage.quickViewCompare_btn.click();
+    }
+    @Then("Verify the user should see the second product page")
+    public void verify_the_user_should_see_the_second_product_page() {
+        assertEquals("CELLO C1920FS 19\" LED-BACKLIT LCD TV",quickViewIconPage.secondProductWish_btn.getText());
+    }
+    @When("The user clicks the second product Add to Wish List Icon")
+    public void the_user_clicks_the_second_product_add_to_wish_list_ıcon() {
+        televisionsPage.item4_addToWishBtn.sendKeys(Keys.ENTER);
+        BrowserUtils.waitFor(1);
+    }
+    @When("The user clicks the compare this second product Icon")
+    public void the_user_clicks_the_compare_this_second_product_ıcon() {
+        quickViewIconPage.secondProductCompare_btn.click();
+        BrowserUtils.waitFor(1);
+    }
+    @Then("Verify the user should see the third product page")
+    public void verify_the_user_should_see_the_third_product_page() {
+        assertEquals("BELKIN ADAPTER CABLE",quickViewIconPage.thirdProductVerify_txt.getText());
+    }
+    @When("The user clicks the third product Add to Wish List Icon")
+    public void the_user_clicks_the_third_product_add_to_wish_list_ıcon() {
+        tvAccessoriesPage.item5_addToWishBtn.sendKeys(Keys.ENTER);
+        BrowserUtils.waitFor(1);
+    }
+    @When("The user clicks the compare this third product Icon")
+    public void the_user_clicks_the_compare_this_third_product_ıcon() {
+        quickViewIconPage.thirdProductCompare_btn.click();
+        BrowserUtils.waitFor(1);
+    }
+    @Then("Verify the user should see the fourth product page")
+    public void verify_the_user_should_see_the_fourth_product_page() {
+       assertEquals("BELKIN - NETWORK DEVICE MOUNTING BRACKET",quickViewIconPage.fourthProductVerify_txt.getText());
+    }
+    @When("The user clicks the fourth product Add to Wish List Icon")
+    public void the_user_clicks_the_fourth_product_add_to_wish_list_ıcon() {
+        quickViewIconPage.fourthProductWish_btn.sendKeys(Keys.ENTER);
+    }
+    @When("The user clicks the compare this fourth product Icon")
+    public void the_user_clicks_the_compare_this_fourth_product_ıcon() {
+        quickViewIconPage.fourthProductCompare_btn.click();
+    }
+
 
 }
