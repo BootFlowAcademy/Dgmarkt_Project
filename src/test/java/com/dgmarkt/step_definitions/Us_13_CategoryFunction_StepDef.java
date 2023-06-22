@@ -21,10 +21,12 @@ public class Us_13_CategoryFunction_StepDef {
     }
     @Then("Verify that the sees  Sub-Category tabs under the Category Module")
     public void verify_that_the_sees_sub_category_tabs_under_the_category_module() {
+        BrowserUtils.waitFor(3);
         Assert.assertTrue(homePage.categorySubMenu_DropDown.isDisplayed());
     }
     @Given("The user click the Category")
     public void the_user_click_the_category() {
+        BrowserUtils.waitFor(3);
         homePage.category_btn.click();
     }
     @Then("Verify that the user is on Category Module")
