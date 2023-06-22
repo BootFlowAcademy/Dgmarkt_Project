@@ -1,6 +1,6 @@
 Feature: Product Compare Function
 
-  Background: : : The user logs in valid credentials and open homepage
+  Background: The user logs in valid credentials and open homepage
     Given The user navigate to web site
     When The user enters login panel credential and clicks login
     And The user closes cookies pop up
