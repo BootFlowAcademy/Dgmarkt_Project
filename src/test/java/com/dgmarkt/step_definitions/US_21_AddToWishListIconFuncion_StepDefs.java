@@ -39,12 +39,10 @@ public class US_21_AddToWishListIconFuncion_StepDefs {
           js.executeScript("arguments[0].scrollIntoView(true);", CategorytoTextScroll);
           BrowserUtils.waitFor(2);
     }
-
     @Then("The user adds six products every category to the wish list")
     public void theUserAddsSixProductsEveryCategoryToTheWishList() {
         addProductToWishList_mtd();
     }
-
     @And("The user verifies contents of the wishlist box")
     public void theUserVerifiesContentsOfTheWishlistBox() {
           BrowserUtils.waitFor(2);

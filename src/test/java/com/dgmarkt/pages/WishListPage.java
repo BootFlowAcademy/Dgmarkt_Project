@@ -18,7 +18,6 @@ public class WishListPage extends BasePage{
     public WebElement item2_removeBtn;
     @FindBy(xpath = "(//span[@class='txt-count'])[1]")
     public WebElement wishlistindex_Btn;
-
     @FindBy(xpath = "//a[contains(@href,'remove=7064674')]")
     public WebElement item1_removeBtn;
     @FindBy(css = "#cart")
