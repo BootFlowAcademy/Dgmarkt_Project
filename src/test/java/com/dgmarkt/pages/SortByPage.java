@@ -1,32 +1,43 @@
 package com.dgmarkt.pages;
 
+import com.dgmarkt.utilities.BrowserUtils;
+import com.dgmarkt.utilities.Driver;
+import com.google.common.collect.Ordering;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class SortByPage extends BasePage {
-
-    @FindBy (xpath = "(//li[@class='li-top-item left '])[1]")
-    public WebElement category_btn;
-
-    @FindBy (xpath = "(//div[@class='mega-menu-container sub-menu-container left '])[1]")
-    public WebElement categorySubMenu_DropDown;
-
-    @FindBy (xpath = "(//a[@class=\"a-mega-second-link\"])[1]")
-    public WebElement healthAndBeauty_loc;
-
-    @FindBy (xpath = "(//a[@class=\"a-mega-second-link\"])[2]")
-    public WebElement television_loc;
-
-    @FindBy (xpath = "(//a[@class=\"a-mega-second-link\"])[3]")
-    public WebElement tvAccessories_loc;
-
-    @FindBy (xpath = "(//a[@class=\"a-mega-second-link\"])[4]")
-    public WebElement networking_loc;
-
-    @FindBy (xpath = "//select[@id='input-sort']")
-    public WebElement sortBy_btn;
 
     @FindBy(xpath = "//select[@id='input-sort']")
     public WebElement sortBy_select;
 
+    public boolean namesAndModelsOfProductsOrdered_mtd() {
+        String name = "";
+        List<String> namesAndModels = new ArrayList<>();
+        WebElement webElement;
+        for (int i = 1; i < 13; i++) {
+            BrowserUtils.scrollToElement(Driver.get().findElement(By.xpath("(//div[@class='caption']//h4)[" + i + "]")));
+            webElement = Driver.get().findElement(By.xpath("(//div[@class='caption']//h4)[" + i + "]"));
+            name = webElement.getText();
+            namesAndModels.add(i - 1, name);
+        }
+        return Ordering.natural().isOrdered(namesAndModels);
+    }
+
+    public boolean priceOfProductsIsOrdered_mtd() {
+        String price = "";
+        List<String> allPrice = new ArrayList<>();
+        WebElement webElement;
+        for (int i = 1; i < 13; i++) {
+            BrowserUtils.scrollToElement(Driver.get().findElement(By.xpath("(//div[@class='caption']//h4)[" + i + "]")));
+            webElement = Driver.get().findElement(By.xpath("(//div[@class='caption']//p[@class='price'])[" + i + "]"));
+            price = webElement.getText();
+            allPrice.add(i - 1, price);
+        }
+        return Ordering.natural().isOrdered(allPrice);
+    }
 }
