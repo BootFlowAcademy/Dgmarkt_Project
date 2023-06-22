@@ -9,9 +9,6 @@ public class OrderHistoryPage extends BasePage{
     public WebElement orderHistory_head;
 @FindBy (xpath = "(//a[@class='btn btn-info'])[1]")
     public WebElement orderView2_btn;
-
-
-
 }
 
 

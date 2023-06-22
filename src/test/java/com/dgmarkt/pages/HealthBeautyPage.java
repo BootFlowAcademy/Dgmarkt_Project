@@ -1,13 +1,9 @@
 package com.dgmarkt.pages;
 
 import static com.dgmarkt.utilities.BrowserUtils.*;
-
-
 import com.dgmarkt.utilities.BrowserUtils;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-
-
 
 public class HealthBeautyPage extends BasePage{
     @FindBy(xpath = "(//a[text()='Health & Beauty'])[1]")
@@ -28,11 +24,8 @@ public class HealthBeautyPage extends BasePage{
     public WebElement item2_addToCompareBtn;
     @FindBy(xpath ="//a[@id='compare-total']" )
     public WebElement productCompare_btn;
-    @FindBy(xpath ="//button[@class='close']" )
-    public WebElement addSucces_msg;
     @FindBy(xpath ="//div[@class='alert alert-fix alert-success alert-dismissible']" )
     public WebElement successToWish_btn;
-
     @FindBy(xpath = "//*[@onclick=\"compare.add('5736703');\"]")
     public WebElement item3_addToCompareBtn;
     @FindBy(xpath = "//*[@title='eufy C1 Smart Scale White']")
@@ -51,12 +44,6 @@ public class HealthBeautyPage extends BasePage{
     public WebElement succesPopUpClose_loc;
     @FindBy(xpath = "//*[text()='Product Compare (4)']")
     public WebElement productCompareAmount_loc;
-
-
-
-
-
-
 
     public void addToWish_mtd(){
         scrollToElement(item1_addToWishBtn);
@@ -98,8 +85,6 @@ public class HealthBeautyPage extends BasePage{
         BrowserUtils.waitFor(1);
 
     }
-
-
 }
 
 

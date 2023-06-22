@@ -9,8 +9,6 @@ import java.util.List;
 
 public class CartPage extends BasePage{
 
-    ComparisonPage comparisonPage = new ComparisonPage();
-
     @FindBy(xpath = "(//span[@class='input-group-btn'])[1]/button[2]")
     public WebElement removeFirstProductFromCart_btn;
     @FindBy(xpath = "//a[text()='Checkout']")
