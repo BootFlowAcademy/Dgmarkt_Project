@@ -3,11 +3,9 @@ package com.dgmarkt.step_definitions;
 import com.dgmarkt.pages.*;
 import com.dgmarkt.utilities.BrowserUtils;
 import com.dgmarkt.utilities.Driver;
-import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import static org.junit.Assert.*;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
@@ -17,13 +15,9 @@ import org.openqa.selenium.interactions.Actions;
 public class Us_20_QuickViewIconFunction_StepDef {
     HealthBeautyPage healthBeautyPage=new HealthBeautyPage();
     Actions actions=new Actions(Driver.get());
-    WishListPage wishListPage=new WishListPage();
-    TelevisionsPage televisionsPage=new TelevisionsPage();
+       TelevisionsPage televisionsPage=new TelevisionsPage();
     TVAccessoriesPage tvAccessoriesPage=new TVAccessoriesPage();
-    NetworkingPage networkingPage=new NetworkingPage();
-    QuickViewIconPage quickViewIconPage = new QuickViewIconPage();
-
-
+        QuickViewIconPage quickViewIconPage = new QuickViewIconPage();
     @When("The user scroll down until NICKY CLARKE NHD146 HAIR THERAPY TOUCH CONTROL HAIR DRYER and clicked quick view icon")
     public void the_user_scroll_down_until_nıcky_clarke_nhd146_haır_therapy_touch_control_haır_dryer_and_clicked_quick_view_icon() {
         WebElement element = Driver.get().findElement(By.xpath("(//a[@href='https://dgmarkt.com/index.php?route=product/product&path=62&product_id=7487326'])[1]"));
@@ -34,19 +28,15 @@ public class Us_20_QuickViewIconFunction_StepDef {
         BrowserUtils.waitFor(1);
         actions.moveToElement(element).perform();
         quickViewIconPage.quickViewIcon.click();
-
     }
-
     @When("The user clicks the Add to cart Icon")
     public void the_user_clicks_the_add_to_cart_ıcon() {
         BrowserUtils.waitFor(2);
         quickViewIconPage.addToCartButton.click();
     }
-
     @When("The user clicks the quantity box")
     public void the_user_clicks_the_quantity_box() {
-quickViewIconPage.quantityBox_txt.clear();
-
+        quickViewIconPage.quantityBox_txt.clear();
     }
     @When("The user fills in the quantity box to increase the number of products")
     public void the_user_fills_in_the_quantity_box_to_increase_the_number_of_products() {
@@ -54,19 +44,14 @@ quickViewIconPage.quantityBox_txt.clear();
         BrowserUtils.waitFor(1);
         quickViewIconPage.addToCartButton.click();
         BrowserUtils.waitFor(2);
-
-
     }
     @When("The user closes the product popup page")
     public void the_user_closes_the_product_popup_page() {
-    quickViewIconPage.quickViewPopUpClose_btn.click();
+        quickViewIconPage.quickViewPopUpClose_btn.click();
     }
-
     @When("The user scroll down until CELLO C1920FS 19\" LED-BACKLIT LCD TV and clicked quick view icon")
-    public void the_user_scroll_down_until_cello_c1920fs_led_backlıt_lcd_tv_and_clicked_quick_view_icon()
-
-    {  WebElement element = Driver.get().findElement(By.xpath("(//a[@href='https://dgmarkt.com/index.php?route=product/product&path=60&product_id=7403979'])[1]"));
-
+    public void the_user_scroll_down_until_cello_c1920fs_led_backlıt_lcd_tv_and_clicked_quick_view_icon() {
+        WebElement element = Driver.get().findElement(By.xpath("(//a[@href='https://dgmarkt.com/index.php?route=product/product&path=60&product_id=7403979'])[1]"));
         // JavascriptExecutor'ı kullanarak sayfayı öğeye kaydırın
         BrowserUtils.waitFor(1);
         JavascriptExecutor js = (JavascriptExecutor) Driver.get();
@@ -74,7 +59,6 @@ quickViewIconPage.quantityBox_txt.clear();
         BrowserUtils.waitFor(1);
         actions.moveToElement(element).perform();
         quickViewIconPage.quickViewIcon2.click();
-
     }
     @When("The user scroll down until BELKIN ADAPTER CABLE and clicked quick view icon")
     public void the_user_scroll_down_until_belkın_adapter_cable_and_clicked_quick_view_icon() {
@@ -98,7 +82,6 @@ quickViewIconPage.quantityBox_txt.clear();
         actions.moveToElement(element).perform();
         quickViewIconPage.quickViewIcon3.click();
     }
-
     @Then("Verify the user should see the first product page")
     public void verify_the_user_should_see_the_first_product_page() {
         assertEquals("NICKY CLARKE NHD146 HAIR THERAPY TOUCH CONTROL HAIR DRYER", quickViewIconPage.quickViewProduct_txt.getText());
@@ -159,6 +142,4 @@ quickViewIconPage.quantityBox_txt.clear();
         quickViewIconPage.fourthProductCompare_btn.click();
         BrowserUtils.waitFor(2);
     }
-
-
 }
