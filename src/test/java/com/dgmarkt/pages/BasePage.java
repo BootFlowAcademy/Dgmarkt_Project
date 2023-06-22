@@ -56,8 +56,6 @@ public abstract class BasePage {
         WebElement submenuCurrency = Driver.get().findElement(xpath("//*[contains(text(),' " + currencyName + "')]/.."));
         return submenuCurrency;
     }
-
-
     public void goToSubCategoryByName_mtd(String subCategoryName){
         WebElement subCategory = Driver.get().findElement(xpath("//a[text()='"+subCategoryName+"']/../.."));
         BrowserUtils.hoverAndClick(category_btn,subCategory);

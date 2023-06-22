@@ -62,15 +62,15 @@ public class Us_07_CartIconFunction_StepDef {
     public void the_user_clicks_checkout_button() {
         cartPage.checkOut_btn.click();
     }
-    @When("The user selects a new address for billing details and clicks continue with valid credentials")
-    public void the_user_selects_a_new_address_for_billing_details_and_clicks_continue_with_valid_credentials(Map<String, String> dataTable) {
+    @When("The user selects a new address for billing details and clicks continue with credentials")
+    public void the_user_selects_a_new_address_for_billing_details_and_clicks_continue_with_credentials(Map<String, String> dataTable) {
         checkoutPage.billingNewAddress_radioBtn.click();
         checkoutPage.enterCredentialsForBilling_mtd(dataTable.get("firstname"), dataTable.get("lastname"),
                 dataTable.get("address1"), dataTable.get("city"), dataTable.get("postcode"),
                 dataTable.get("country"), dataTable.get("region-state"));
     }
-    @When("The user selects a new address for delivery details and clicks continue with valid credentials")
-    public void the_user_selects_a_new_address_for_delivery_details_and_clicks_continue_with_valid_credentials(Map<String, String> dataTable) {
+    @When("The user selects a new address for delivery details and clicks continue with credentials")
+    public void the_user_selects_a_new_address_for_delivery_details_and_clicks_continue_with_credentials(Map<String, String> dataTable) {
         BrowserUtils.clickWithJS(checkoutPage.deliveryNewAddress_radioBtn);
         checkoutPage.enterCredentialsForDelivery_mtd(dataTable.get("firstname"), dataTable.get("lastname"),
                 dataTable.get("address1"), dataTable.get("city"), dataTable.get("postcode"),
@@ -135,5 +135,10 @@ public class Us_07_CartIconFunction_StepDef {
         String actCount = forLoginAgainPage.countProduct_text.getText();
         forLoginAgainPage.removeAllProductfromCart();
         Assert.assertEquals(expCount, actCount);
+    }
+    @Then("Verify that the user not able to continue to delivery details")
+    public void verify_that_the_user_not_able_to_continue_to_delivery_details() {
+        BrowserUtils.waitFor(1);
+        Assert.assertFalse(checkoutPage.deliveryContinue_btn.isDisplayed());
     }
 }

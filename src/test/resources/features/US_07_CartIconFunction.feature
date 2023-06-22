@@ -1,4 +1,4 @@
-
+@BFB1DGMAUT-7
 Feature: Cart Icon Function
 
   Background: The user is on home page
@@ -26,7 +26,7 @@ Feature: Cart Icon Function
     Given The user clicks cart icon button
     And The user clicks view cart button
     When The user clicks Checkout button
-    And The user selects a new address for billing details and clicks continue with valid credentials
+    And The user selects a new address for billing details and clicks continue with credentials
       | firstname    | onur        |
       | lastname     | bootflow    |
       | company      | sdet        |
@@ -35,7 +35,7 @@ Feature: Cart Icon Function
       | postcode     | 47510       |
       | country      | Turkey      |
       | region-state | Mardin      |
-    And The user selects a new address for delivery details and clicks continue with valid credentials
+    And The user selects a new address for delivery details and clicks continue with credentials
       | firstname    | onur        |
       | lastname     | bootflow    |
       | company      | sdet        |
@@ -56,9 +56,25 @@ Feature: Cart Icon Function
     When The user changes first added products quantity to "3"
     Then the user verify that first added products quantity is "3"
 
-  @BFB1DGMAUT-7
+  @BFB1DGMAUT-74
   Scenario: The user sees how many product in cart near Cart Icon when user login
     When The user logs out and closes the driver
     And The user navigate to web site again
     And The user enters account credentials "onuraudit@gmail.com" and "test.12345" again
     Then Verify that added products are "2" near the cart icon
+
+  @BFB1DGMAUT-75
+  Scenario: The user should not be able continue to checkout by invalid billing details firstname and lastname
+    Given The user clicks cart icon button
+    And The user clicks view cart button
+    When The user clicks Checkout button
+    And The user selects a new address for billing details and clicks continue with credentials
+      | firstname    | 2           |
+      | lastname     | _           |
+      | company      | sdet        |
+      | address1     | lion street |
+      | city         | midyat      |
+      | postcode     | 47510       |
+      | country      | Turkey      |
+      | region-state | Mardin      |
+    Then Verify that the user not able to continue to delivery details
