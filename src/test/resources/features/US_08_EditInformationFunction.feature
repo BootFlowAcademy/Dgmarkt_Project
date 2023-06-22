@@ -11,10 +11,12 @@ Feature: Edit Information Function
     And The user clicks on the my account button under the my account tab
     Then The user should be click on the edit my account tab on the page that opens
 
+  @BFB1DGMAUT-81
   Scenario: The user should be able to update their user information under the edit my account tab.
     Given The user should be able to make various changes on the page that opens
     When Verify that you can click the continue button
 
+  @BFB1DGMAUT-83
   Scenario Outline: Verify that the user is able to display the error message when entering or not entering invalid user information.
     Given The user clicks on the my account button under the my account tab
     When The user should be click on the edit my account tab on the page that opens
@@ -30,7 +32,6 @@ Feature: Edit Information Function
       | Elif      | Deniz?      | denizel@gmail.com | 05322222222 |
       | Elif      | 26426426521 | denizel@gmail.com | 05322222222 |
       | Elif      | Deniz       | denizel@gmail.com | -.-         |
-
 
 
 

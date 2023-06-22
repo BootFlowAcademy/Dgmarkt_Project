@@ -17,7 +17,7 @@ public class EditInformationPage extends BasePage {
     public static WebElement telephone_text;
     @FindBy(xpath = "//input[@type='submit']")
     public static WebElement continue_btn;
-    @FindBy(xpath = "//div[@class='alert alert-success alert-dismissible']")
+    @FindBy(xpath = "//div[@text='alert alert-success alert-dismissible']")
     public WebElement editSuccess_msg;
 
     public void editInformation_mtd(String firstName, String lastName, String eMail, String telephone) {
