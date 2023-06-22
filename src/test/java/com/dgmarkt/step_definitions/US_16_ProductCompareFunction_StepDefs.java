@@ -53,8 +53,8 @@ public class US_16_ProductCompareFunction_StepDefs {
     public void the_user_adds_five_products_to_the_compare_page() {
         healthBeautyPage.addToFiveProductCompare_mtd();
     }
-    @Then("Verify that {string} products have been added to the comparison page")
-    public void verifyThatProductsHaveBeenAddedToTheComparisonPage(String amount) {
+    @Then("Verify that the compare page button appears as {string}")
+    public void erifyThatTheComparePageButtonAppearsAs (String amount) {
         Assert.assertEquals(amount,healthBeautyPage.productCompareAmount_loc.getText());
     }
 

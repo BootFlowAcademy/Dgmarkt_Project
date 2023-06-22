@@ -28,7 +28,7 @@ Feature: Product Compare Function
   Scenario: The user should be able to add 5 products to the Product Comparison page
     When The user navigates to Health & Beauty category
     And The user adds five products to the compare page
-    Then Verify that "Product Compare (5)" products have been added to the comparison page
+    Then Verify that the compare page button appears as "Compare Product (5)"
   @BFB1DGMAUT-16
   Scenario: The user should be able to add products to Cart from Comparison Page
     When The user navigates to Health & Beauty category
