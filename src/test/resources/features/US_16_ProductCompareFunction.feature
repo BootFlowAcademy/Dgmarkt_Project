@@ -41,7 +41,7 @@ Feature: Product Compare Function
     When The user navigates to Health & Beauty category
     And The user adds products to the compare page
     And The user clicks Product Compare button
-    And The user removes the product to cart using Add to Cart button
+    And The user removes the product to cart using Remove button
     Then Verify that the user removes the product in the Cart
 
 

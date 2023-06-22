@@ -69,8 +69,8 @@ public class US_16_ProductCompareFunction_StepDefs {
         Assert.assertEquals("BaByliss 3663U - Hair rollers",comparisonPage.item1Health_loc.getText());
         cartPage.remove_btn.click();
     }
-    @And("The user removes the product to cart using Add to Cart button")
-    public void theUserRemovesTheProductToCartUsingAddToCartButton() {
+    @And("The user removes the product to cart using Remove button")
+    public void theUserRemovesTheProductToCartUsingRemoveButton() {
         comparisonPage.item1Health_RemoveToCartBtn.click();
     }
 

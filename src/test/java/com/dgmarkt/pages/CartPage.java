@@ -21,6 +21,8 @@ public class CartPage extends BasePage{
     public WebElement updateQuantityFirstProductInCart_btn;
     @FindBy(xpath = "(//input[contains(@name, 'quantity')])[1]")
     public WebElement quantityFirstProductInCart_text;
+    @FindBy(xpath = "//button[@class=\"btn btn-danger\"]")
+    public WebElement remove_btn;
 
     public void removeAllProductfromCart(){ //Sepet sayfasındaki ürünlari tek tek siler
         int numberofProduct = numberOfProductInCartList_mtd();
