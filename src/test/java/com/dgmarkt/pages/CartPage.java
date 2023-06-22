@@ -8,6 +8,9 @@ import org.openqa.selenium.support.FindBy;
 import java.util.List;
 
 public class CartPage extends BasePage{
+
+    ComparisonPage comparisonPage = new ComparisonPage();
+
     @FindBy(xpath = "(//span[@class='input-group-btn'])[1]/button[2]")
     public WebElement removeFirstProductFromCart_btn;
     @FindBy(xpath = "//a[text()='Checkout']")
@@ -18,6 +21,10 @@ public class CartPage extends BasePage{
     public WebElement updateQuantityFirstProductInCart_btn;
     @FindBy(xpath = "(//input[contains(@name, 'quantity')])[1]")
     public WebElement quantityFirstProductInCart_text;
+    @FindBy(xpath = "//a[text()='Shopping Cart']")
+    public WebElement shoppingCartHeader_loc;
+    @FindBy(xpath = "//button[@class=\"btn btn-danger\"]")
+    public WebElement cartPageRemove_btn;
 
     public void removeAllProductfromCart(){ //Sepet sayfasındaki ürünlari tek tek siler
         int numberofProduct = numberOfProductInCartList_mtd();

@@ -5,14 +5,12 @@ import com.dgmarkt.utilities.BrowserUtils;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-
 import static org.openqa.selenium.By.xpath;
 
 public abstract class BasePage {
     public BasePage() {
-        PageFactory.initElements(Driver.get(), this);
+        PageFactory.initElements(Driver.get(),this);
     }
-
     @FindBy(xpath = "//a[@title='My Account']/..")
     public WebElement myAccount_btn;
     @FindBy(xpath = "//a[@id='pt-login-link']/..")
@@ -23,7 +21,7 @@ public abstract class BasePage {
     public WebElement cartIcon_btn;
     @FindBy(xpath = "//ul[@class='dropdown-menu pull-right']")
     public WebElement cartProduct_list;
-    @FindBy(xpath = "(//li[@class='li-top-item left '])[1]")
+    @FindBy(xpath = "//span[text()='Category']/../..")
     public WebElement category_btn;
     @FindBy(xpath = "(//div[@class='mega-menu-container sub-menu-container left '])[1]")
     public WebElement categorySubMenu_DropDown;
@@ -49,15 +47,17 @@ public abstract class BasePage {
     public WebElement currencySubMenuPound_btn;
     @FindBy(xpath = "//div[@class='breadcrumbs']//h1")
     public WebElement pageName_text;//Bulunulan sayfanın sayfa ismini locate eder
+    @FindBy(xpath = "(//li[@class='li-top-item left '])[2]")
+    public WebElement category2_btn;
+    @FindBy(xpath = "(//a[text()='Order History'])[1]")
+    public WebElement orderHistory_btn;
 
     public WebElement currencySubmenuByName_mtd(String currencyName) {
         WebElement submenuCurrency = Driver.get().findElement(xpath("//*[contains(text(),' " + currencyName + "')]/.."));
         return submenuCurrency;
     }
-    public void goToSubCategoryByName_mtd(String subCategoryName) {
-        WebElement subCategory = Driver.get().findElement(xpath("//a[text()='" + subCategoryName + "']/../.."));
-        BrowserUtils.hoverAndClick(category_btn, subCategory);
+    public void goToSubCategoryByName_mtd(String subCategoryName){
+        WebElement subCategory = Driver.get().findElement(xpath("//a[text()='"+subCategoryName+"']/../.."));
+        BrowserUtils.hoverAndClick(category_btn,subCategory);
     }
-    @FindBy(xpath = "(//li[@class='li-top-item left '])[2]")
-    public WebElement category2_btn;
 }
