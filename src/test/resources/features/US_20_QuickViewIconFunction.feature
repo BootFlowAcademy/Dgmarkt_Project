@@ -1,6 +1,6 @@
 @BFB1DGMAUT-20
 Feature: Quick View Function
-
+  @BFB1DGMAUT-121
   Scenario: The user logs in for login panel and The user logs in for my account login with valid credential and The user select Sub-Category tabs under the Category Module
     Given The user navigate to web site
     When The user enters login panel credential and clicks login
