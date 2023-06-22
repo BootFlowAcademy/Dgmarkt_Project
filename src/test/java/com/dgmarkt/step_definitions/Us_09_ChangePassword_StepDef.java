@@ -56,4 +56,8 @@ public class Us_09_ChangePassword_StepDef {
     public void the_user_enters_more_than_40_characters_and_credentials(String password, String passwordConfirm) {
         changePasswordPage.changePassword_mtd(password,passwordConfirm);
     }
+    @Given("The user enters password with invalid credentials as 21 characters.")
+    public void the_user_enters_password_with_invalid_credentials_as_21_characters() {
+        changePasswordPage.changePassword_mtd("istanbul,izmir,ANKARA","istanbul,izmir,ANKARA");
+    }
 }

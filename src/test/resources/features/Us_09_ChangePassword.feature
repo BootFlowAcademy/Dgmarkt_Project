@@ -40,6 +40,11 @@ Feature: Change Password Test - The user can change the password
       | "\"(İzmir9Eylül1922)\"&\"(Samsun19Mayıs1919)\"-?=" | "\"(İzmir9Eylül1922)\"&\"(Samsun19Mayıs1919)\"-?=" |
 
 
+  Scenario: The user should not change the password with invalid credentials which is between more than 20 characters.
+    Given The user enters password with invalid credentials as 21 characters.
+    Then Verify that warning message is displayed
+
+
 
 
 
