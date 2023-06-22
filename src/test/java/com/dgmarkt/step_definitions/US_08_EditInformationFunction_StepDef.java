@@ -3,7 +3,6 @@ package com.dgmarkt.step_definitions;
 import com.dgmarkt.pages.EditInformationPage;
 import com.dgmarkt.pages.HomePage;
 import com.dgmarkt.utilities.BrowserUtils;
-import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
@@ -22,20 +21,20 @@ public class US_08_EditInformationFunction_StepDef {
     }
     @When("The user should be able to make various changes on the page that opens")
     public void the_user_should_be_able_to_make_various_changes_on_the_page_that_opens() {
-        editInformationPage.firstName_text.clear();
-        editInformationPage.firstName_text.sendKeys("Elif");
-        editInformationPage.lastName_text.clear();
-        editInformationPage.lastName_text.sendKeys("Deniz");
-        editInformationPage.eMail_text.clear();
-        editInformationPage.eMail_text.sendKeys("eliftest@gmail.com");
-        editInformationPage.telephone_text.clear();
-        editInformationPage.telephone_text.sendKeys("05322222222");
+        editInformationPage.editInformation_mtd("Elif", "Deniz", "denizel@gmail.com", "05322222222");
     }
     @Then("Verify that you can click the continue button")
     public void verify_that_you_can_click_the_continue_button() {
-        editInformationPage.continue_btn.click();
         BrowserUtils.waitForVisibility(editInformationPage.editSuccess_msg, 3);
         Assert.assertTrue("'Success: Your account has been successfully updated.' should be displayed", editInformationPage.editSuccess_msg.isDisplayed());
+    }
+    @When("The user enters credentials {string}, {string}, {string}, {string} in field")
+    public void the_user_enters_credentials_in_field(String firstName, String lastName, String eMail, String telephone) {
+        editInformationPage.editInformation_mtd(firstName, lastName, eMail, telephone);
+    }
+    @Then("Verify that warning message is displayed.")
+    public void verify_that_warning_message_is_displayed() {
+        Assert.assertFalse(editInformationPage.editSuccess_msg.isDisplayed());
     }
 }
 

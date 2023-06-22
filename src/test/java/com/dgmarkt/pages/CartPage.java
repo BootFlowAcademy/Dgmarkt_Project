@@ -17,10 +17,10 @@ public class CartPage extends BasePage{
     public WebElement checkOut_btn;
     @FindBy(xpath = "//*[@id='content']/div[2]/div/table/tbody/tr[2]/td[2]")
     public WebElement totalPrice;
-    @FindBy(xpath = "//*[@class=\"fa fa-times-circle\"]")
-    public WebElement remove_btn;
-
-
+    @FindBy(xpath = "(//span[@class='input-group-btn'])[1]/button[1]")
+    public WebElement updateQuantityFirstProductInCart_btn;
+    @FindBy(xpath = "(//input[contains(@name, 'quantity')])[1]")
+    public WebElement quantityFirstProductInCart_text;
 
     public void removeAllProductfromCart(){ //Sepet sayfasındaki ürünlari tek tek siler
         int numberofProduct = numberOfProductInCartList_mtd();
@@ -33,7 +33,4 @@ public class CartPage extends BasePage{
        List<WebElement> allProductRowInCartList = Driver.get().findElements(By.xpath("(//table)[3]/tbody/tr"));
         return allProductRowInCartList.size();
     }
-
-
-
 }
