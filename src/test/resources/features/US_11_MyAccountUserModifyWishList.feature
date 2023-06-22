@@ -1,5 +1,5 @@
 @BFB1DGMAUT-11
-Feature: Popular Tags Function
+Feature: My Account-User can Modify wish list
 
   Scenario: The user logs in for login panel and The user logs in for my account login with valid credential and The user select Sub-Category tabs under the Category Module
     Given The user navigate to web site
