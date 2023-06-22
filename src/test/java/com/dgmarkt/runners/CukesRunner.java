@@ -14,7 +14,7 @@ import org
         },
         features = "src/test/resources/features",
         glue = "com/dgmarkt/step_definitions",
-        dryRun = false,
+        dryRun =false,
         tags = ""
 )
 public class CukesRunner {
