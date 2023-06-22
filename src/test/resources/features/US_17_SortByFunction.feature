@@ -8,6 +8,7 @@ Feature: Sort By Function
     When The user clicks the login under the my account
     And The user enters account credentials "hsena@gmail.com" and "fdsfdsfds" and clicks login
 
+    @BFB1DGMAUT-82
   Scenario Outline: The user sees default sort on subcategory "<subcategory>"
     When The user navigates to sub-category "<subcategory>"
     Then Verify that the sortby is displayed and selected default
@@ -18,6 +19,7 @@ Feature: Sort By Function
       | TV Accessories  |
       | Networking      |
 
+      @BFB1DGMAUT-84
   Scenario Outline: The user sorts products by Name (A-Z) on sub category "<subcategory>"
     When The user navigates to sub-category "<subcategory>"
     And The user selects sort type by "Name (A - Z)"
@@ -29,6 +31,7 @@ Feature: Sort By Function
       | TV Accessories  |
       | Networking      |
 
+        @BFB1DGMAUT-86
   Scenario Outline: The user sorts products by Name (Z-A) on sub category "<subcategory>"
     When The user navigates to sub-category "<subcategory>"
     And The user selects sort type by "Name (Z - A)"
@@ -40,6 +43,7 @@ Feature: Sort By Function
       | TV Accessories  |
       | Networking      |
 
+          @BFB1DGMAUT-87
   Scenario Outline: The user sorts products by Price (Low-High) on sub category "<subcategory>"
     When The user navigates to sub-category "<subcategory>"
     And The user selects sort type by "Price (Low > High)"
@@ -51,7 +55,7 @@ Feature: Sort By Function
       | TV Accessories  |
       | Networking      |
 
-
+            @BFB1DGMAUT-88
   Scenario Outline: The user sorts products by Price (High-Low) on sub category "<subcategory>"
     When The user navigates to sub-category "<subcategory>"
     And The user selects sort type by "Price (High > Low)"
@@ -63,6 +67,7 @@ Feature: Sort By Function
       | TV Accessories  |
       | Networking      |
 
+              @BFB1DGMAUT-89
   Scenario Outline: The user sorts products by Model (A-Z) on sub category "<subcategory>"
     When The user navigates to sub-category "<subcategory>"
     And The user selects sort type by "Model (A - Z)"
@@ -74,6 +79,7 @@ Feature: Sort By Function
       | TV Accessories  |
       | Networking      |
 
+                @BFB1DGMAUT-91
   Scenario Outline: The user sorts products by Model (Z-A) on sub category "<subcategory>"
     When The user navigates to sub-category "<subcategory>"
     And The user selects sort type by "Model (Z - A)"
