@@ -27,6 +27,3 @@ Feature: Contact us Function
     And The user enter message above then 3000 char
     Then The user click submit button
     And Verify that the user see warning message.
-
-
-
