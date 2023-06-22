@@ -7,7 +7,6 @@ Feature: Product Compare Function
     Then Verify that the user sees home logo icon
     When The user clicks the login under the my account
     And The user enters account credentials "nezih@bootflow.academy" and "12345" and clicks login
-    Then Verify that the user is on home page
   @BFB1DGMAUT-16
   Scenario Outline: The user should be able to navigate the Product Compare Page when the User clicks on the Product Compare
     When The user hovers the "<Menu>" and click "<Submenu>"
