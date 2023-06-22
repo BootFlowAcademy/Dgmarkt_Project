@@ -5,8 +5,10 @@ Feature: Change Password Test - The user can change the password
     Given The user navigate to web site
     When The user enters login panel credential and clicks login
     And The user closes cookies pop up
+    Then Verify that the user sees home logo icon
     When The user clicks the login under the my account
     And The user enters account credentials "salihotest1@gmail.com" and "Test1234" and clicks login
+    Then Verify that the user is on home page
     Then The user go to my account page
     Then The user go to password page
   @BFB1DGMAUT-103
@@ -36,12 +38,6 @@ Feature: Change Password Test - The user can change the password
       | "\"(İzmir9Eylül1922)\"&\"(Samsun19Mayıs1919)\""    | "\"(İzmir9Eylül1922)\"&\"(Samsun19Mayıs1919)\""    |
       | "\"(İzmir9Eylül1922)\"&\"(Samsun19Mayıs1919)\"?"   | "\"(İzmir9Eylül1922)\"&\"(Samsun19Mayıs1919)\"?"   |
       | "\"(İzmir9Eylül1922)\"&\"(Samsun19Mayıs1919)\"-?=" | "\"(İzmir9Eylül1922)\"&\"(Samsun19Mayıs1919)\"-?=" |
-
-
-  #Scenario: The user should not change the password with invalid credentials which is between more than 20 characters.
-    #Given The user enters password with invalid credentials as 21 characters.
-    #Then Verify that warning message is displayed
-
 
 
 
