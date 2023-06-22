@@ -6,12 +6,12 @@ Feature: Login Functionality
     When The user enters login panel credential and clicks login
     And The user closes cookies pop up
     Then Verify that the user sees home logo icon
-
+  @BFB1DGMAUT-66
   Scenario: The user logs in for my account login with valid credential
     When The user clicks the login under the my account
     And The user enters account credentials "ortakoyadnan@gmail.com" and "1234" and clicks login
     Then Verify that the user is on home page
-
+  @BFB1DGMAUT-68
   Scenario Outline: The user logs in for my account login with different credential
     When The user clicks the login under the my account
     And The user enters account credentials "<email>" and "<password>" and clicks login
