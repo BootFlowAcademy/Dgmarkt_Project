@@ -31,7 +31,7 @@ Feature: My Account Order History
     And The user should be able to clicks reorder icon
     Then Verify that success message and the product is in the shopping cart
 
-  @BFB1DGMAUT-140
+  @BFB1DGMAUT-14
   Scenario: Verify that the user can return an item from their order history
     Given The user navigate to order history page
     When The user should be able to see order history page
