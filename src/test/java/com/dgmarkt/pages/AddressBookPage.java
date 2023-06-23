@@ -2,13 +2,10 @@ package com.dgmarkt.pages;
 
 import com.dgmarkt.utilities.BrowserUtils;
 import com.dgmarkt.utilities.Driver;
-import com.github.javafaker.Country;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
-
-import javax.swing.plaf.synth.Region;
 
 public class AddressBookPage extends BasePage {
     @FindBy(xpath = "//a[text()='Address Book']")
