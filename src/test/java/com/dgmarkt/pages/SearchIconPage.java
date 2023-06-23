@@ -13,8 +13,4 @@ public class SearchIconPage extends BasePage {
   public  WebElement startSearch_btn;
 @FindBy (xpath= "//p[@class='manufacture-product']/../h4/a")
   public WebElement firstProductName_text;
-
-
-
-
 }

@@ -17,8 +17,8 @@ public class HomePage extends BasePage{
     public WebElement healthCat_Btn;
     @FindBy(xpath = "//div[@class='logout-success']")
     public WebElement accountLogout_box;
-
-
+    @FindBy(xpath = "(//td[@class='text-right'])[2]")
+    public WebElement productTotalPrice;
     public void goToCategory_mtd(){hoverAndClick(category_Btn,healthCat_Btn);
     }
 
@@ -27,10 +27,4 @@ public class HomePage extends BasePage{
         actions.moveToElement(Driver.get().findElement(By.xpath("//span[text()='"+Menu+"']"))).perform();
         Driver.get().findElement(By.xpath("(//h4//a[text()='"+Submenu+"'])[1]")).click();
     }
-
-
-
-
-
-
 }

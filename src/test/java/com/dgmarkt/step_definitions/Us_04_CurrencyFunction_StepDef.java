@@ -15,6 +15,7 @@ public class Us_04_CurrencyFunction_StepDef {
     CartPage cartPage=new CartPage();
     CheckoutPage checkoutPage=new CheckoutPage();
     String expCurrency = "";
+    String expTotalPrice="";
     @Given("The user clicks currency button")
     public void the_user_clicks_currency_button() {
         homePage.currency_btn.click();
@@ -78,5 +79,11 @@ public class Us_04_CurrencyFunction_StepDef {
         Driver.get().navigate().back();
         cartPage.removeAllProductfromCart();
     }
-}
+    @Then("Verify that products are visible dollar")
+    public void verify_that_products_are_visible_dollar(String totalPrice) {
+    expTotalPrice=homePage.currencySubmenuByName_mtd(totalPrice).getText();
+        Assert.assertTrue(expTotalPrice.contains(homePage.currentCurrency_text.getText()));
+    }
+
+    }
 

@@ -10,9 +10,4 @@ public class TelevisionsPage extends BasePage {
     public WebElement television2_loc;
     @FindBy(xpath = "//button[@onclick=\"wishlist.add('7403979');\"]")
     public WebElement item4_addToWishBtn;
-
-
-
-
-
 }

@@ -27,6 +27,5 @@ public class Us_15_SubcategoryProductViewFunction {
        BrowserUtils.scrollToElement(productViewIconPage.clickViewIcon(viewType));
        String actValue=productViewIconPage.clickViewIcon(viewType).getAttribute("class");
        Assert.assertTrue(actValue.contains(expValue));
-
     }
 }
