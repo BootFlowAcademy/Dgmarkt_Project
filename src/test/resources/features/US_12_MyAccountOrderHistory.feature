@@ -10,16 +10,19 @@ Feature: My Account Order History
     Then Verify that the user is on home page
     When The user clicks to My Account button
 
+  @BFB1DGMAUT-137
   Scenario: The user should be able to see order history
     Given The user navigate to order history page
     When The user should be able to see order history page
 
+  @BFB1DGMAUT-138
   Scenario: Verify that tu user can access the order detail by clicking the view icon
     Given The user navigate to order history page
     When The user should be able to see order history page
     Given The user should be able to click on view icon
     When The user should be able to see order details
 
+  @BFB1DGMAUT-139
   Scenario: Verify that the user can re-order an item from their order history
     Given The user navigate to order history page
     When The user should be able to see order history page
@@ -28,6 +31,7 @@ Feature: My Account Order History
     And The user should be able to clicks reorder icon
     Then Verify that success message and the product is in the shopping cart
 
+  @BFB1DGMAUT-140
   Scenario: Verify that the user can return an item from their order history
     Given The user navigate to order history page
     When The user should be able to see order history page

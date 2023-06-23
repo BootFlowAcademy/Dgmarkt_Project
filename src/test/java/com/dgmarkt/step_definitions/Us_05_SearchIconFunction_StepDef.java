@@ -12,6 +12,8 @@ public class Us_05_SearchIconFunction_StepDef   {
     SearchPage searchPage=new SearchPage();
     @When("The user clicks search button")
     public void the_user_clicks_search_button() {
+BrowserUtils.waitFor(2);
+
         searchIconPage.searchIconFunction.click();
     }
     @When("The user enters {string} in search button")

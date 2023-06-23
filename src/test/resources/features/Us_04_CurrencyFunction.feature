@@ -1,4 +1,4 @@
-@BFB1DGMAUT-4
+ @BFB1DGMAUT-4
 Feature: Currency Functionality
 
   Background: The user is on home page
@@ -7,14 +7,13 @@ Feature: Currency Functionality
     And The user closes cookies pop up
     When The user clicks the login under the my account
     And The user enters account credentials "ismailbahri@gmail.com" and "123456" and clicks login
-    Then Verify that the user is on home page
-
+  @BFB1DGMAUT-51
   Scenario: The user logs in for my account login with valid credential
     Given The user clicks currency button
     Then The user click the Euro Button
     And The user closes cookies pop up
     Then verify that The user sees euro icon
-
+  @BFB1DGMAUT-53
   Scenario Outline: The user logs in for my account login with valid credential
     Given The user clicks currency button
     Then The user click the "<currencyName>" Button
@@ -25,7 +24,7 @@ Feature: Currency Functionality
       | Euro           | €         |
       | Pound Sterling | £         |
       | US Dollar      | $         |
-
+  @BFB1DGMAUT-54
   Scenario Outline: The user change currency CartPage
     Given The user navigates to sub-category "Networking"
     And The user adds two products to the cart list names "ASUS ROG STRIX GS-AX3000" and "Belkin Secure Flip KVM Switch"
@@ -39,7 +38,7 @@ Feature: Currency Functionality
       | Euro           | €            |
       | Pound Sterling | £            |
       | US Dollar      | $            |
-
+  @BFB1DGMAUT-55
     Scenario Outline: The user completes his/her purchase with the currency his/her choice
       Given The user navigates to sub-category "Networking"
       And The user adds two products to the cart list names "ASUS ROG STRIX GS-AX3000" and "Belkin Secure Flip KVM Switch"
