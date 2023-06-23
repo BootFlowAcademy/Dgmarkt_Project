@@ -69,7 +69,7 @@ public class HealthBeautyPage extends BasePage{
     public void addToWish_mtd(){
         scrollToElement(item1_addToWishBtn);
         hoverAndClick(item1_hoverOver,item1_addToWishBtn);
-        hoverAndClick(item2_hoverOver,item1_addToWishBtn);
+        hoverAndClick(item2_hoverOver,item2_addToWishBtn);
     }
     public void addToCompare_mtd(){
         scrollToElement(item1_hoverOver);
