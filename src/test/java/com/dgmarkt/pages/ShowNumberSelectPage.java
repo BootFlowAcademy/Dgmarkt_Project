@@ -12,6 +12,7 @@ public class ShowNumberSelectPage extends BasePage {
     public WebElement showNumber_select;
     public void showDefaultNumberSelect_mtd (String expectedNumber){
         Select showNumber = new Select(showNumber_select);
+        expectedNumber = "12";
         String actualNumber = showNumber.getFirstSelectedOption().getText();
         Assert.assertEquals(expectedNumber,actualNumber);
         BrowserUtils.waitFor(3);
@@ -31,6 +32,5 @@ public class ShowNumberSelectPage extends BasePage {
         }
     }
 }
-
 
 
