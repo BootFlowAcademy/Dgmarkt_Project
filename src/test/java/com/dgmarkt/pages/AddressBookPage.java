@@ -35,6 +35,7 @@ public class AddressBookPage extends BasePage {
     public WebElement editButton_btn;
     @FindBy(xpath = "//div[text()=' Your address has been successfully updated']")
     public WebElement verifyEditAddressUpdated_text;
+
     public void theUserAddressClicks_mtd(String FirstName, String LastName, String Address1, String City, String PostCode) {
         inputFirstName_text.sendKeys(FirstName);
         inputLastName_text.sendKeys(LastName);
@@ -42,7 +43,8 @@ public class AddressBookPage extends BasePage {
         inputCity_text.sendKeys(City);
         inputPostCode_text.sendKeys(PostCode);
     }
-    public void theUserSelectCountryRegion_mtd(String Country, String RegionState){
+
+    public void theUserSelectCountryRegion_mtd(String Country, String RegionState) {
         WebElement CountryLoc = Driver.get().findElement(By.cssSelector("#input-country"));
         Select slcCountry = new Select(CountryLoc);
         slcCountry.selectByValue(Country);
@@ -51,6 +53,7 @@ public class AddressBookPage extends BasePage {
         BrowserUtils.waitFor(2);
         slcRegionState.selectByValue(RegionState);
     }
+
     public void theUserAddressClear_mtd(String FirstName, String LastName, String Address1, String City, String PostCode) {
         inputFirstName_text.clear();
         inputLastName_text.clear();
