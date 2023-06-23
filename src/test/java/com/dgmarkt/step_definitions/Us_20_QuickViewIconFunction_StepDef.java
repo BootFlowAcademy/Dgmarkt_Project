@@ -22,7 +22,7 @@ public class Us_20_QuickViewIconFunction_StepDef {
     QuickViewIconPage quickViewIconPage = new QuickViewIconPage();
 
     @When("The user scroll down until NICKY CLARKE NHD146 HAIR THERAPY TOUCH CONTROL HAIR DRYER and clicked quick view icon")
-    public void the_user_scroll_down_until_nıcky_clarke_nhd146_haır_therapy_touch_control_haır_dryer_and_clicked_quick_view_icon() {
+    public void the_user_scroll_down_until_nicky_clarke_nhd146_hair_therapy_touch_control_hair_dryer_and_clicked_quick_view_icon() {
         WebElement element = Driver.get().findElement(By.xpath("(//a[@href='https://dgmarkt.com/index.php?route=product/product&path=62&product_id=7487326'])[1]"));
         // JavascriptExecutor'ı kullanarak sayfayı öğeye kaydırın
         BrowserUtils.waitFor(1);
@@ -34,7 +34,7 @@ public class Us_20_QuickViewIconFunction_StepDef {
     }
 
     @When("The user clicks the Add to cart Icon")
-    public void the_user_clicks_the_add_to_cart_ıcon() {
+    public void the_user_clicks_the_add_to_cart_icon() {
         BrowserUtils.waitFor(2);
         quickViewIconPage.addToCartButton.click();
     }
@@ -58,7 +58,7 @@ public class Us_20_QuickViewIconFunction_StepDef {
     }
 
     @When("The user scroll down until CELLO C1920FS 19\" LED-BACKLIT LCD TV and clicked quick view icon")
-    public void the_user_scroll_down_until_cello_c1920fs_led_backlıt_lcd_tv_and_clicked_quick_view_icon() {
+    public void the_user_scroll_down_until_cello_c1920fs_led_backlit_lcd_tv_and_clicked_quick_view_icon() {
         WebElement element = Driver.get().findElement(By.xpath("(//a[@href='https://dgmarkt.com/index.php?route=product/product&path=60&product_id=7403979'])[1]"));
         // JavascriptExecutor'ı kullanarak sayfayı öğeye kaydırın
         BrowserUtils.waitFor(1);
@@ -70,7 +70,7 @@ public class Us_20_QuickViewIconFunction_StepDef {
     }
 
     @When("The user scroll down until BELKIN ADAPTER CABLE and clicked quick view icon")
-    public void the_user_scroll_down_until_belkın_adapter_cable_and_clicked_quick_view_icon() {
+    public void the_user_scroll_down_until_belkin_adapter_cable_and_clicked_quick_view_icon() {
         WebElement element = Driver.get().findElement(By.xpath("(//a[@href='https://dgmarkt.com/index.php?route=product/product&path=61&product_id=2541827'])[1]"));
         // JavascriptExecutor'ı kullanarak sayfayı öğeye kaydırın
         BrowserUtils.waitFor(1);
@@ -82,7 +82,7 @@ public class Us_20_QuickViewIconFunction_StepDef {
     }
 
     @When("The user scroll down until BELKIN - NETWORK DEVICE MOUNTING BRACKET and clicked quick view icon")
-    public void the_user_scroll_down_until_belkın_network_devıce_mountıng_bracket_and_clicked_quick_view_icon() {
+    public void the_user_scroll_down_until_belkin_network_device_mounting_bracket_and_clicked_quick_view_icon() {
         WebElement element = Driver.get().findElement(By.xpath("(//a[@href='https://dgmarkt.com/index.php?route=product/product&path=59&product_id=7463434'])[1]"));
         // JavascriptExecutor'ı kullanarak sayfayı öğeye kaydırın
         BrowserUtils.waitFor(1);
@@ -100,13 +100,13 @@ public class Us_20_QuickViewIconFunction_StepDef {
     }
 
     @When("The user clicks the first product Add to Wish List Icon")
-    public void the_user_clicks_the_first_product_add_to_wish_list_ıcon() {
+    public void the_user_clicks_the_first_product_add_to_wish_list_icon() {
         healthBeautyPage.item3_addToWishBtn.sendKeys(Keys.ENTER);
         BrowserUtils.waitFor(2);
     }
 
     @When("The user clicks the compare this first product Icon")
-    public void the_user_clicks_the_compare_this_first_product_ıcon() {
+    public void the_user_clicks_the_compare_this_first_product_icxvvvon() {
         quickViewIconPage.quickViewCompare_btn.click();
         BrowserUtils.waitFor(2);
     }
@@ -118,13 +118,13 @@ public class Us_20_QuickViewIconFunction_StepDef {
     }
 
     @When("The user clicks the second product Add to Wish List Icon")
-    public void the_user_clicks_the_second_product_add_to_wish_list_ıcon() {
+    public void the_user_clicks_the_second_product_add_to_wish_list_icon() {
         televisionsPage.item4_addToWishBtn.sendKeys(Keys.ENTER);
         BrowserUtils.waitFor(2);
     }
 
     @When("The user clicks the compare this second product Icon")
-    public void the_user_clicks_the_compare_this_second_product_ıcon() {
+    public void the_user_clicks_the_compare_this_second_product_icon() {
         quickViewIconPage.secondProductCompare_btn.click();
         BrowserUtils.waitFor(2);
     }
@@ -136,13 +136,13 @@ public class Us_20_QuickViewIconFunction_StepDef {
     }
 
     @When("The user clicks the third product Add to Wish List Icon")
-    public void the_user_clicks_the_third_product_add_to_wish_list_ıcon() {
+    public void the_user_clicks_the_third_product_add_to_wish_list_icon() {
         tvAccessoriesPage.item5_addToWishBtn.sendKeys(Keys.ENTER);
         BrowserUtils.waitFor(2);
     }
 
     @When("The user clicks the compare this third product Icon")
-    public void the_user_clicks_the_compare_this_third_product_ıcon() {
+    public void the_user_clicks_the_compare_this_third_product_icon() {
         quickViewIconPage.thirdProductCompare_btn.click();
         BrowserUtils.waitFor(2);
     }
@@ -154,13 +154,13 @@ public class Us_20_QuickViewIconFunction_StepDef {
     }
 
     @When("The user clicks the fourth product Add to Wish List Icon")
-    public void the_user_clicks_the_fourth_product_add_to_wish_list_ıcon() {
+    public void the_user_clicks_the_fourth_product_add_to_wish_list_icon() {
         quickViewIconPage.fourthProductWish_btn.click();
         BrowserUtils.waitFor(2);
     }
 
     @When("The user clicks the compare this fourth product Icon")
-    public void the_user_clicks_the_compare_this_fourth_product_ıcon() {
+    public void the_user_clicks_the_compare_this_fourth_product_icon() {
         quickViewIconPage.fourthProductCompare_btn.click();
         BrowserUtils.waitFor(2);
     }
