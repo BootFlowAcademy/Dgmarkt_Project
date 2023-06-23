@@ -2,13 +2,10 @@ package com.dgmarkt.pages;
 
 import com.dgmarkt.utilities.BrowserUtils;
 import com.dgmarkt.utilities.Driver;
-import com.github.javafaker.Country;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
-
-import javax.swing.plaf.synth.Region;
 
 public class AddressBookPage extends BasePage {
     @FindBy(xpath = "//a[text()='Address Book']")
@@ -35,6 +32,7 @@ public class AddressBookPage extends BasePage {
     public WebElement editButton_btn;
     @FindBy(xpath = "//div[text()=' Your address has been successfully updated']")
     public WebElement verifyEditAddressUpdated_text;
+
     public void theUserAddressClicks_mtd(String FirstName, String LastName, String Address1, String City, String PostCode) {
         inputFirstName_text.sendKeys(FirstName);
         inputLastName_text.sendKeys(LastName);
@@ -42,7 +40,8 @@ public class AddressBookPage extends BasePage {
         inputCity_text.sendKeys(City);
         inputPostCode_text.sendKeys(PostCode);
     }
-    public void theUserSelectCountryRegion_mtd(String Country, String RegionState){
+
+    public void theUserSelectCountryRegion_mtd(String Country, String RegionState) {
         WebElement CountryLoc = Driver.get().findElement(By.cssSelector("#input-country"));
         Select slcCountry = new Select(CountryLoc);
         slcCountry.selectByValue(Country);
@@ -51,6 +50,7 @@ public class AddressBookPage extends BasePage {
         BrowserUtils.waitFor(2);
         slcRegionState.selectByValue(RegionState);
     }
+
     public void theUserAddressClear_mtd(String FirstName, String LastName, String Address1, String City, String PostCode) {
         inputFirstName_text.clear();
         inputLastName_text.clear();

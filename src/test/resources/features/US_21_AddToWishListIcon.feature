@@ -7,10 +7,9 @@ Feature: Login Functionality
     And The user closes cookies pop up
     When The user clicks the login under the my account
     And The user enters account credentials "bootdev@bootflow.academy" and "12341234" and clicks login
-    Then Verify that the user is on home page
 
-
-  Scenario Outline:  The user should be able to see products in the Wish List
+  @BFB1DGMAUT-132
+  Scenario Outline:  The user should be able to see products wishlist icon and add to wishlist box
     Then The user hovers the cursor over the category tab
     When The user clicks on "<CategoryName>", Verify that the user sees "<CategoryNameText>" and scrolls down
     Then The user adds six products every category to the wish list
@@ -20,7 +19,7 @@ Feature: Login Functionality
       | Televisions     | Televisions      |
       | TV Accessories  | TV Accessories   |
       | Networking      | Networking       |
-
+    @BFB1DGMAUT-133
     Scenario: The user verifies wishlist box and clears the wishlist
       And The user verifies contents of the wishlist box
       Then The user clears contents of the wishlist box

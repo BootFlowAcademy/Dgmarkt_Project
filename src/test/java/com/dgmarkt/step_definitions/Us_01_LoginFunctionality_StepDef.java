@@ -3,6 +3,7 @@ package com.dgmarkt.step_definitions;
 import com.dgmarkt.pages.HomePage;
 import com.dgmarkt.pages.LoginPage;
 import com.dgmarkt.pages.LoginPanel;
+import com.dgmarkt.utilities.BrowserUtils;
 import com.dgmarkt.utilities.ConfigurationReader;
 import com.dgmarkt.utilities.Driver;
 import io.cucumber.java.en.Given;
@@ -38,6 +39,7 @@ public class Us_01_LoginFunctionality_StepDef {
     @When("The user enters account credentials {string} and {string} and clicks login")
     public void the_user_enters_account_credentials_and_and_clicks_login(String email, String password) {
         loginPage.loginPage_mtd(email, password);
+        BrowserUtils.waitFor(1); //Then satırını kaldırınca 1 saniye eklemem gerekti (Nezih)
     }
     @Then("Verify that the user is on home page")
     public void verify_that_the_user_is_on_home_page() {
