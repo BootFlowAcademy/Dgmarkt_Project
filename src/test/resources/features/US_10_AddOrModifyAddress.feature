@@ -1,6 +1,6 @@
-
 @BFB1DGMAUT-10
 Feature: Add or Modify Address
+
   Background: The user is on home page
     Given The user navigate to web site
     When The user enters login panel credential and clicks login
@@ -11,6 +11,7 @@ Feature: Add or Modify Address
     And The user clicks on the my account button under the my account tab
     Then The user should be click on the address book tab on the page that opens
 
+  @BFB1DGMAUT-104
   Scenario Outline: The user should be able to add new adress with valid credentials
     When The user clicks on new address button
     And The user clicks on "<FirstName>" box, "<LastName>" box,  "<Address1>" box,"<City>" box and "<PostCode>" box
@@ -20,10 +21,11 @@ Feature: Add or Modify Address
     Examples:
       | FirstName            | LastName             | Address1                | City                 | PostCode | Country | RegionState |
       | Fred                 | Stone                | Mountain View Sunnyvale | San Jose             | 94043    | 223     | 3624        |
-      | 1                    | 1                    | 111                     | 11                   | 11       | 215     | 3353        |
+      | 1                    | 1                    | 1111                    | 11                   | 11       | 215     | 3353        |
       | aaaa                 | aaaa                 | aaaa                    | aaaa                 | aaaa     | 81      | 1259        |
       | abcDEF///1234567@@@, | abcDEF///1234567@@@, | abcDEF///1234567@@@,    | abcDEF///1234567@@@, | abc1234, | 6       | 131         |
 
+  @BFB1DGMAUT-134
   Scenario Outline: The user should be able to add new adress with invalid credentials and no data
     When The user clicks on new address button
     And The user clicks on "<FirstName>" box, "<LastName>" box,  "<Address1>" box,"<City>" box and "<PostCode>" box
@@ -36,6 +38,7 @@ Feature: Add or Modify Address
       | 1                                   |                                     | 12                                                                                                             | 1                                                                                                              | 1             |         |             |
       | abcDEFghjk//--\1234567890@@@==***…, | abcDEFghjk//--\1234567890@@@==***…, | abcDEFghjk//--\1234567890@@@==***…,+++12345qwrpmabcDEFghjk//--\1234567890@@@==***…,+++12345qwrpmabcDEFghjk//-- | abcDEFghjk//--\1234567890@@@==***…,+++12345qwrpmabcDEFghjk//--\1234567890@@@==***…,+++12345qwrpmabcDEFghjk//-- | abc12345//+++ |         |             |
 
+  @BFB1DGMAUT-135
   Scenario Outline: The user should be able to update adress with valid credentials
     When The user clicks edit button
     And The user clears "<FirstName>" box, "<LastName>" box,  "<Address1>" box,"<City>" box and "<PostCode>" box for update
