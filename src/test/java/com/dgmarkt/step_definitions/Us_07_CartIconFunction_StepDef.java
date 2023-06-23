@@ -1,23 +1,25 @@
 package com.dgmarkt.step_definitions;
 
-import com.dgmarkt.pages.CartPage;
-import com.dgmarkt.pages.CheckoutPage;
-import com.dgmarkt.pages.HomePage;
-import com.dgmarkt.pages.NetworkingPage;
+import com.dgmarkt.pages.*;
 import com.dgmarkt.utilities.BrowserUtils;
+import com.dgmarkt.utilities.ConfigurationReader;
 import com.dgmarkt.utilities.Driver;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
+import org.openqa.selenium.support.PageFactory;
 
 import java.util.Map;
+import java.util.concurrent.TimeUnit;
 
 public class Us_07_CartIconFunction_StepDef {
+
     HomePage homePage = new HomePage();
     NetworkingPage networkingPage = new NetworkingPage();
     CartPage cartPage = new CartPage();
     CheckoutPage checkoutPage = new CheckoutPage();
+    ForLoginAgainPage forLoginAgainPage = new ForLoginAgainPage();
 
     @When("The user clicks cart icon button")
     public void the_user_clicks_cart_icon_button() {
@@ -60,15 +62,15 @@ public class Us_07_CartIconFunction_StepDef {
     public void the_user_clicks_checkout_button() {
         cartPage.checkOut_btn.click();
     }
-    @When("The user selects a new address for billing details and clicks continue with valid credentials")
-    public void the_user_selects_a_new_address_for_billing_details_and_clicks_continue_with_valid_credentials(Map<String, String> dataTable) {
+    @When("The user selects a new address for billing details and clicks continue with credentials")
+    public void the_user_selects_a_new_address_for_billing_details_and_clicks_continue_with_credentials(Map<String, String> dataTable) {
         checkoutPage.billingNewAddress_radioBtn.click();
         checkoutPage.enterCredentialsForBilling_mtd(dataTable.get("firstname"), dataTable.get("lastname"),
                 dataTable.get("address1"), dataTable.get("city"), dataTable.get("postcode"),
                 dataTable.get("country"), dataTable.get("region-state"));
     }
-    @When("The user selects a new address for delivery details and clicks continue with valid credentials")
-    public void the_user_selects_a_new_address_for_delivery_details_and_clicks_continue_with_valid_credentials(Map<String, String> dataTable) {
+    @When("The user selects a new address for delivery details and clicks continue with credentials")
+    public void the_user_selects_a_new_address_for_delivery_details_and_clicks_continue_with_credentials(Map<String, String> dataTable) {
         BrowserUtils.clickWithJS(checkoutPage.deliveryNewAddress_radioBtn);
         checkoutPage.enterCredentialsForDelivery_mtd(dataTable.get("firstname"), dataTable.get("lastname"),
                 dataTable.get("address1"), dataTable.get("city"), dataTable.get("postcode"),
@@ -101,14 +103,42 @@ public class Us_07_CartIconFunction_StepDef {
     }
     @When("The user changes first added products quantity to {string}")
     public void the_user_changes_first_added_products_quantity_to(String quantity) {
-cartPage.quantityFirstProductInCart_text.clear();
-cartPage.quantityFirstProductInCart_text.sendKeys(quantity);
-cartPage.updateQuantityFirstProductInCart_btn.click();
+        cartPage.quantityFirstProductInCart_text.clear();
+        cartPage.quantityFirstProductInCart_text.sendKeys(quantity);
+        cartPage.updateQuantityFirstProductInCart_btn.click();
     }
     @Then("the user verify that first added products quantity is {string}")
     public void the_user_verify_that_first_added_products_quantity_is(String expQuantity) {
-        String actQuantity =cartPage.quantityFirstProductInCart_text.getAttribute("value");
-        Assert.assertEquals(expQuantity,actQuantity);
+        String actQuantity = cartPage.quantityFirstProductInCart_text.getAttribute("value");
+        Assert.assertEquals(expQuantity, actQuantity);
         cartPage.removeAllProductfromCart();
+    }
+    @When("The user logs out and closes the driver")
+    public void the_user_logs_out_and_closes_the_driver() {
+        homePage.myAccount_btn.click();
+        homePage.logout_btn.click();
+        Driver.closeDriver();
+    }
+    @When("The user navigate to web site again")
+    public void the_user_navigate_to_web_site_again() {
+        Driver.get().navigate().to(ConfigurationReader.get("url"));
+        Driver.get().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        Driver.get().manage().window().maximize();
+    }
+    @When("The user enters account credentials {string} and {string} again")
+    public void the_user_enters_account_credentials_and_again(String email, String password) {
+        PageFactory.initElements(Driver.get(), forLoginAgainPage);
+        forLoginAgainPage.loginAgain(email, password);
+    }
+    @Then("Verify that added products are {string} near the cart icon")
+    public void verify_that_added_products_are_near_the_cart_icon(String expCount) {
+        String actCount = forLoginAgainPage.countProduct_text.getText();
+        forLoginAgainPage.removeAllProductfromCart();
+        Assert.assertEquals(expCount, actCount);
+    }
+    @Then("Verify that the user not able to continue to delivery details")
+    public void verify_that_the_user_not_able_to_continue_to_delivery_details() {
+        BrowserUtils.waitFor(1);
+        Assert.assertFalse(checkoutPage.deliveryContinue_btn.isDisplayed());
     }
 }

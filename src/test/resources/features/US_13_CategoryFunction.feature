@@ -17,7 +17,7 @@ Feature: Category Functionality
       | subcategory     | Sub-CategoryPage |
       | Health & Beauty | Health & Beauty  |
       | Televisions     | Televisions      |
-      | TVAccessories   | TV Accessories   |
+      | TV Accessories   | TV Accessories   |
       | Networking      | Networking       |
 @BFB1DGMAUT-38
   Scenario: The user goes to Category Module
